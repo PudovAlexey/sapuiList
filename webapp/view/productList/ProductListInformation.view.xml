@@ -1,0 +1,31 @@
+<mvc:View xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc'>
+
+        <Bar>
+            <contentRight>
+                <Button icon="sap-icon://full-screen" press=".onFullScreen" type="Transparent" width="auto" />
+                <Button icon="sap-icon://decline" press=".onCloseDetail" type="Transparent" width="auto" />
+            </contentRight>
+        </Bar>
+
+            <Table id="MainpageAETable" width="100%" noDataText="No data" mode="SingleSelectLeft" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+                <infoToolbar>
+                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                        <content>
+                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" />
+                        </content>
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <OverflowToolbar width="100%" height="auto" design="Transparent" visible="true" enabled="true">
+                        <content>
+                            <Title text="Список АЭ" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false" />
+                            <ToolbarSpacer />
+                            <SearchField search="onSearchAEList" placeholder="Поиск по номеру АЭ" showSearchButton="true" visible="true" width="20%" />
+                            <OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort-descending" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress" />
+                            <OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort-ascending" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress" />
+                            <OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress" />
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+            </Table>
+</mvc:View>

@@ -1,0 +1,108 @@
+{
+	"_version": "1.21.0",
+	"sap.app": {
+		"id": "sap.ui.listItem",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [
+				""
+			],
+			"fallbackLocale": ""
+		},
+		"title": "appTitle",
+		"description": "appDescription",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"resources": {
+			"js": [
+				{
+					"url": "<url>"
+				}
+			]
+		},
+		"rootView": {
+			"viewName": "sap.ui.listItem.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.listItem.i18n.i18n",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
+				}
+			},
+			"invoice": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Invoices.json"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.listItem.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true,
+				"bypassed": {
+					"target": [
+						"Error"
+					]
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "appHome",
+					"target": "home",
+					"viewLevel" : 1
+				},
+
+				{
+					"pattern": "invoice/{id}",
+					"name": "invoice",
+					"target": "invoice"
+				}
+			],
+			"targets": {
+				"home": {
+					"viewId": "home",
+					"viewName": "Home",
+					"viewLevel": 1
+				},
+				"invoice": {
+					"viewId": "invoice",
+					"viewName": "ProductListInformation",
+					"viewPath": "sap.ui.listItem.view.productList",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}
