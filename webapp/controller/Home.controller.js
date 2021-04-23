@@ -1,16 +1,12 @@
 sap.ui.define([
-    "sap/ui/listItem/controller/BaseController",
-    "sap/ui/model/json/JSONModel"
-], function(BaseController, JSONModel) {
-    "use strict"
+    "app/controller/BaseController",
+    "sap/m/SplitAppMode"
+], function(BaseController, SplitAppMode) {
+'use strict'
 
-    return BaseController.extend("sap.ui.listItem.controller.Home", {
+    return BaseController.extend("app.controller.Home" , {
         onInit: function() {
-            let oInvoice = this.getView().getModel("invoice");
 
-            console.log(oInvoice)
         }
-
     })
-
 })

@@ -1,7 +1,7 @@
 {
 	"_version": "1.21.0",
 	"sap.app": {
-		"id": "sap.ui.listItem",
+		"id": "app",
 		"type": "application",
 		"i18n": {
 			"bundleUrl": "i18n/i18n.properties",
@@ -31,10 +31,15 @@
 				{
 					"url": "<url>"
 				}
-			]
+			],
+			"css": [
+				{
+				  "uri": "css/style.css"
+				}
+			  ]
 		},
 		"rootView": {
-			"viewName": "sap.ui.listItem.view.App",
+			"viewName": "app.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -49,7 +54,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sap.ui.listItem.i18n.i18n",
+					"bundleName": "app.i18n.i18n",
 					"supportedLocales": [
 						""
 					],
@@ -59,16 +64,25 @@
 			"invoice": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "Invoices.json"
+			},
+			"shoppingCart": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "shoppingCart.json"
+			},
+
+			"wishList": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "wishList.json"
 			}
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "sap.ui.listItem.view",
+				"viewPath": "app.view",
 				"controlId": "app",
-				"controlAggregation": "pages",
-				"transition": "slide",
+				"controlAggregation": "detailPages",
+				"transition": "filp",
 				"async": true,
 				"bypassed": {
 					"target": [
@@ -77,30 +91,92 @@
 				}
 			},
 			"routes": [
+
 				{
 					"pattern": "",
-					"name": "appHome",
+					"name": "HomePage",
 					"target": "home",
-					"viewLevel" : 1
+					"viewLevel": 1
 				},
 
 				{
-					"pattern": "invoice/{id}",
+					"pattern": "shop",
+					"name": "SplitApp",
+					"target": "master",
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/{invoiceId}",
 					"name": "invoice",
-					"target": "invoice"
+					"target": ["detail","master"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/{invoiceId}/{productName}",
+					"name": "invoiceInformaton",
+					"target": ["detail","invoiceInformaton"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "shoppingCart",
+					"name": "shoppingCart",
+					"target": "shoppingcart",
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "wishList",
+					"name": "wishList",
+					"target": "wishList",
+					"viewLevel": 2
 				}
 			],
 			"targets": {
+
 				"home": {
-					"viewId": "home",
+					"viewId": "homeId",
 					"viewName": "Home",
-					"viewLevel": 1
+					"controllAggregation": "pages"
 				},
-				"invoice": {
-					"viewId": "invoice",
-					"viewName": "ProductListInformation",
-					"viewPath": "sap.ui.listItem.view.productList",
-					"viewLevel": 2
+
+				"detail": {
+					"viewId": "detailId",
+					"viewName": "Detail",
+					"viewPath": "app.view.productList",
+					"controllAggregation": "detailPages"
+				},
+
+
+				"master": {
+					"viewId": "masterId",
+					"viewName": "Master",
+					"viewPath": "app.view.productList",
+					"controlAggregation": "masterPages"
+				},
+
+				"invoiceInformaton": {
+					"viewId": "informationId",
+					"viewName": "InvoiceInformation",
+					"viewPath": "app.view.productList",
+					"controlAggregation": "detailPages",
+					"viewLevel" : 2,
+					"transition": "flip"
+				},
+
+				"shoppingcart": {
+					"viewId": "shoppingCartId",
+					"viewName": "ShoppongCart",
+					"controllAggregation": "pages"
+				},
+
+				"wishList": {
+					"viewId": "wishListId",
+					"viewName": "WishList",
+					"viewLevel" : 3,
+					"transition": "slide"
 				}
 			}
 		}

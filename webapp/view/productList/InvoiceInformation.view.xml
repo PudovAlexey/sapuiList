@@ -1,0 +1,154 @@
+<mvc:View controllerName="app.controller.InvoiceInformation" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:wt="app.control" busyIndicatorDelay="0">
+	<Page id="employeePage" title="{i18n>ItemInformation} {i18n>ItemId}" class="sapUiResponsiveContentPadding">
+		<content>
+			<HBox>
+				<Carousel width="70%">
+					<Image src="{path: 'invoice>img/0'}" />
+					<Image src="{path: 'invoice>img/1'}" />
+					<Image src="{path: 'invoice>img/2'}" />
+				</Carousel>
+				<VBox width="150%">
+					<Title text="{path: 'invoice>name'}" />
+					<Toolbar>
+						<VBox>
+							<HBox>
+								<Label text="current price: " />
+								<ObjectNumber state="Success" number="{path: 'invoice>currentPrice'}" />
+							</HBox>
+							<HBox>
+								<Label text="old price: " />
+								<ObjectNumber state="Error" number="{path: 'invoice>priceBeforeDiscount'}" />
+							</HBox>
+						</VBox>
+						<RatingIndicator enabled="false" value="{path: 'invoice>productRating'}" />
+						<ObjectNumber number="{path: 'invoice>reviews',
+													formatter: '.formatter.getRating'}" />
+					</Toolbar>
+					<Label text="Review:" />
+					<Text text="Lorem ipsum dolor sit amet, consectetur adipscg elit, sed do eiusmod tempor incididunt ut laborea et dolore magna alqua. Quis ipsum suspendssem moa ultrices gravida." />
+					<Label text="Color:" />
+						<SegmentedButton id="choosedColor" items="{path: 'invoice>avalibleColor'}">
+						<items>
+							
+
+									<SegmentedButtonItem width="5rem" text="{invoice>}" key="{invoice>}"/>
+
+						</items>
+					</SegmentedButton>
+					<Label text="Size:" />
+
+					
+					<SegmentedButton id="choosedSize" items="{path: 'invoice>availableSizes'}" key="{invoice>}">
+						<items>
+							
+
+									<SegmentedButtonItem width="5rem" text="{invoice>}" key="{invoice>}" class="customColor" />
+
+						</items>
+					</SegmentedButton>
+					<f:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+						<f:content>
+							<Label text="SKU" />
+							<Text text="11FSE7739" />
+							<Label text="Categories" />
+							<Text text="Woman" />
+							<Toolbar>
+								<Label text="Tags:" />
+								<Text textAlign="Center" text="Fashion" />
+								<ToolbarSeparator />
+								<Text textAlign="Center" text="Woman" />
+								<ToolbarSeparator />
+								<Text textAlign="Center" text="Sale" />
+								<ToolbarSeparator />
+							</Toolbar>
+							<Toolbar>
+								<Label text="Share:" />
+								<Link href="https://twitter.com/" />
+								<Button href="https://www.instagram.com/" />
+								<Button href="https://www.facebook.com/" />
+								<Button href="https://www.pinterest.ru/" />
+							</Toolbar>
+						</f:content>
+
+					</f:SimpleForm>
+					<HBox>
+						<StepInput id="counter" min="0" max="{invoice>volumeInStock}" width="15%" />
+						<Button press=".onAddItem" icon="sap-icon://cart-3" text="Add to cart" />
+						<Button press=".onAddItem" icon="sap-icon://thumb-up" text="Add to Wish list" />
+					</HBox>
+				</VBox>
+			</HBox>
+		</content>
+		<content>
+			<IconTabBar id="iconTabBar" headerBackgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="Description">
+						<Label text="{path: 'invoice>product/0/name'}" />
+						<Text text="{path: 'invoice>product/0/description'}" />
+					</IconTabFilter>
+
+					<IconTabFilter text="Additional information">
+						<Text text="Additional" />
+					</IconTabFilter>
+
+					<IconTabFilter text="Reviews">
+						<List id="reviews" class="sapUiResponsiveMargin" width="auto" items="{path: 'invoice>reviews'}">
+							<items>
+								<CustomListItem>
+									<content>
+										<HBox alignItems="Center" class="sapUiTinyMarginBottom">
+											<Avatar />
+											<Title text="{invoice>FirstName}" class="sapUiSmallMarginBegin" />
+										</HBox>
+										<Toolbar>
+											<Text text="{invoice>message}" />
+											<Link src="{invoice>mail}" />
+											<ToolbarSpacer />
+											<RatingIndicator enabled="false" value="{invoice>rating}" />
+
+
+										</Toolbar>
+									</content>
+								</CustomListItem>
+							</items>
+
+						</List>
+					</IconTabFilter>
+				</items>
+
+			</IconTabBar>
+		</content>
+		<content>
+			<f:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+				<Label text="Add your review" />
+				<f:content>
+					<Toolbar>
+						<Label text="Your Rating" />
+						<ToolbarSpacer />
+						<wt:ProductRating id="rating" class="sapUiSmallMarginStart" change="onRatingChange" />
+					</Toolbar>
+					<VBox width="1000%">
+						<HBox width="100%">
+							<Input width="50%" />
+							<Input width="50%" />
+						</HBox>
+						<TextArea height="15rem" cols="50" width="50rem" />
+						<Button text="LEAVE REVIEW" />
+					</VBox>
+				</f:content>
+
+			</f:SimpleForm>
+		</content>
+		<content>
+			<Title titleStyle="H1" bold="true" textAlign="Center" width="100%" text="RELATED PRODUCTS" />
+			<HBox width="100%" justifyContent="SpaceBetween">
+				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
+
+				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard2" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
+
+				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard3" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
+				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard4" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>

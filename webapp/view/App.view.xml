@@ -1,5 +1,29 @@
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<Shell>
-		<App id="app" />
-	</Shell>
+<mvc:View controllerName="app.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<Page>
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Image />	
+				</contentLeft>
+
+				<contentMiddle>
+					<Button press=".onHomeClick" text="HOME"/>
+					<Button press=".onShopClick" text="SHOP"/>
+					<Button text="PAGE"/>
+					<Button text="BLOG"/>
+					<Button text="CONTACT"/>
+				</contentMiddle>
+
+				<contentRight>
+					<Button icon="sap-icon://account"/>
+					<Button icon="sap-icon://search"/>
+					<Button press="onWishListClick" icon="sap-icon://thumb-up"/>
+					<Button press="onShoppingCartClick" icon="sap-icon://cart-full"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<Shell>
+			<SplitApp id="app" class=".myAppDemoWT"/>
+		</Shell>
+	</Page>
 </mvc:View>

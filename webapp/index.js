@@ -2,7 +2,7 @@ sap.ui.define([
     "sap/ui/core/ComponentContainer"
 ], function (ComponentContainer) {
     new ComponentContainer({
-        name: "sap.ui.listItem",
+        name: "app",
         settings: {
             id: "listItem"
         },

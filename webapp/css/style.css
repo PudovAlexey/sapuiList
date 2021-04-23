@@ -1,0 +1,38 @@
+/* html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem
+ }
+ 
+ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-left: 0.125rem
+ } */
+ 
+ /* html[dir="ltr"]  */
+ .detailClass .sapMObjStatusText {
+     text-decoration: line-through;
+ }
+
+ /* html[dir="ltr"]  */
+ .myAppDemoDetail .myCustomText {
+    text-decoration: line-through;
+ }
+
+ .ShoppingCard {
+   font-size: 50px;  
+   font-weight: bold;
+  }
+
+  .relatedProductCard {
+     display: flex;
+     flex-direction: column;
+     align-content: center;
+     max-width: 150px;
+  }
+
+  .relatedProduct__current,
+  .relatedProduct__old {
+     display: inline-block;
+  }
+
+  .relatedProduct__old {
+     text-decoration: line-through;
+  }

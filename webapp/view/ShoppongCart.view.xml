@@ -1,0 +1,89 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="app.controller.ShoppongCart" xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc'>
+    <Page>
+
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <SearchField />
+                </contentMiddle>
+            </Bar>
+        </customHeader>
+
+            <Table id="idProductsTable"
+            inset="false"
+            items="{shoppingCart>/shoppingCart/}">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title text="Product Cart" level="H2"/>
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <infoToolbar>
+                <OverflowToolbar>
+                    <Label textAlign="Center" text="Product Cart"/>
+                </OverflowToolbar>
+            </infoToolbar>
+            <columns>
+                <Column
+                    width="12em">
+                    <Text text="Avatar" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true">
+                    <Text text="Item Name" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="End">
+                    <Text text="Choosed parameters" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center">
+                    <Text text="Choosed Value" />
+                </Column>
+                <Column
+                    hAlign="End">
+                    <Text text="Price" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Avatar src="{shoppingCart>icon}"/>
+                        <ObjectIdentifier
+                            title=" X{shoppingCart>name}"
+                            text="{ProductId}"/>
+                        <Text
+                            text="Size: {shoppingCart>choosedSize} X Color: {shoppingCart>choosedColor}" />
+                        <Text
+                            text="{shoppingCart>choosedItems} pc." />
+                        <ObjectNumber
+                            number="{path: 'shoppingCart>currentPrice',
+                            formatter: '.formatter.formatPrice'}"
+                            unit="{shoppingCart>currentPrice}"/>
+                        <ObjectNumber
+                                number="{
+                                    parts:[{path:'Price'},{path:'CurrencyCode'}],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: false}
+                                }"
+                                unit="{CurrencyCode}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <Toolbar>
+            <Button text="Share your cart" icon="sap-icon://email"/>
+            <Button text="order delivery" icon="sap-icon://supplier"/>
+            <ToolbarSpacer/>
+            <Button text="to pay" icon="sap-icon://batch-payments"/>
+            <Button press=".onClearCart" text="clear cart" icon="sap-icon://cart-2"/>
+        </Toolbar>
+
+    </Page>
+</mvc:View>
