@@ -1,34 +1,44 @@
 sap.ui.define([
-    "app/controller/BaseController", 
-], function(BaseController) {
+    "app/controller/BaseController",
+    "sap/ui/table/RowAction"
+], function(BaseController, RowAction) {
 'use strict'
 
     return BaseController.extend("app.controller.ShoppongCart", {
+
+        onBeforeRendering() {
+            let oTable = this.byId("idProductsTable");
+            this.mode = [
+                {
+					key: "NavigationDelete",
+					text: "Navigation & Delete",
+					handler: function(){
+						var oTemplate = new RowAction({items: [
+							new RowActionItem({
+								type: "Navigation",
+								press: fnPress,
+								visible: "{Available}"
+							}),
+							new RowActionItem({type: "Delete", press: fnPress})
+						]});
+						return [2, oTemplate];
+					}
+				}
+            ]
+
+            debugger
+        },
         onBeforeRendering() {
             let oModel =  this.getOwnerComponent().getModel("shoppingCart")
-
-            //filtered picked items from lockalStorage and returns items for shopping Cart 
-           this._shoppingCart = () => {
-            let choppingCartKeys =  Object.keys(localStorage).filter(el => el.lastIndexOf("shoppingCart") > -1 ? el : null)
-            let choppingCartValues = []
-            for (let i = 0; i <= localStorage.length; i++) {
-             let key = localStorage.key(i)
-                 for (let j = 0; j <= choppingCartKeys.length; j++) {
-                     if (key === choppingCartKeys[j])   choppingCartValues.push(JSON.parse(localStorage.getItem(key))) 
-                 }    
-            }
-            return choppingCartValues
-           }
-
 
            this.getView().setModel(oModel, "shoppingCart")
            this._oShoppingCartModel = this.getView().getModel("shoppingCart")
             this._convertLocalStorage()
-            
         },
 
         _convertLocalStorage() {
-            this._oShoppingCartModel.setProperty("/shoppingCart", this._shoppingCart())
+            this._oShoppingCartModel.setProperty("/shoppingCart", this._addedItems().shoppingCart)
+            debugger
 
 
         },

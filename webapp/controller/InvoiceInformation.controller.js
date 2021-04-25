@@ -47,9 +47,6 @@ sap.ui.define([
 			this.getView().getModel('invoice').setProperty(`${getCurrentContext}/choosedItems`, chooserQuantity)
 			this.getView().getModel('invoice').setProperty(`${getCurrentContext}/choosedSize`, choosedSize)
 			this.getView().getModel('invoice').setProperty(`${getCurrentContext}/choosedColor`, choosedColor) 
-			// window.localStorage.setItem(`${getCurrentContext}/${choosedColor}/${choosedSize}/shoppingCart`, JSON.stringify(invoiceModel))
-
-			// MessageToast.show(`${chooserQuantity >=1 ? "Items" : "Item"} ${chooserQuantity} ${getCurrentItemName} with article ${getCurrentItemArticle} was added in your shopping cart. please check your shopping cart`)
 
 			oEvent.getSource().getText() === "Add to cart" ? this._onAddItemInCart(getCurrentContext, choosedColor, choosedSize, invoiceModel, chooserQuantity, getCurrentItemName, getCurrentItemArticle) : this._onAddItemInWishList(getCurrentContext, choosedColor, choosedSize, invoiceModel, chooserQuantity, getCurrentItemName, getCurrentItemArticle)
 		},

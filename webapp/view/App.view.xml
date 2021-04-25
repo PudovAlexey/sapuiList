@@ -17,8 +17,22 @@
 				<contentRight>
 					<Button icon="sap-icon://account"/>
 					<Button icon="sap-icon://search"/>
-					<Button press="onWishListClick" icon="sap-icon://thumb-up"/>
-					<Button press="onShoppingCartClick" icon="sap-icon://cart-full"/>
+					<Button press="onWishListClick" icon="sap-icon://thumb-up">
+						<customData>
+							<BadgeCustomData
+								id="bagdeWishList"
+								key="badge"
+								value="0"/>
+						</customData>
+					</Button>
+					<Button press="onShoppingCartClick" icon="sap-icon://cart-full">
+						<customData>
+							<BadgeCustomData
+								id="bagdeCart"
+								key="badge"
+								value="0"/>
+						</customData>
+					</Button>
 				</contentRight>
 			</Bar>
 		</customHeader>

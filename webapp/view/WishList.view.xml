@@ -1,4 +1,5 @@
-<mvc:View 
+<mvc:View
+controllerName="app.controller.WishList"
 xmlns="sap.m"
 xmlns:mvc="sap.ui.core.mvc"
 xmlns:grid="sap.ui.layout.cssgrid"
@@ -13,7 +14,7 @@ xmlns:dnd-grid="sap.f.dnd">
             </Toolbar>
         </headerToolbar>
 
-        <f:GridList id="gridList" headerText="GridList header" items="{invoice>/Invoices/0/product/}">
+        <f:GridList id="gridList" headerText="GridList header" items="{wishList>/wishList/}">
 
             <f:dragDropConfig>
                 <dnd:DragInfo sourceAggregation="items" />
@@ -31,8 +32,8 @@ xmlns:dnd-grid="sap.f.dnd">
                             <FlexItemData growFactor="1" shrinkFactor="0" />
                         </layoutData>
                         <HBox>
-                            <Avatar src="{invoice>icon}"/>
-                            <Text text="{invoice>description}"/>
+                            <Avatar src="{wishList>icon}"/>
+                            <Text text=" {=${wishList>description}.substr(0, 50)} {=${wishList>description}.length >= 50 ? '...' : '' }"/>
                         </HBox>
                                 <Toolbar>
                                         <VBox class="sapUitinyMarginTop">
@@ -41,7 +42,7 @@ xmlns:dnd-grid="sap.f.dnd">
                                                     <Label text="current price:" />
                                                 </HBox>
                                                 <HBox>
-                                                    <ObjectNumber state="Success" number="{path: 'invoice>currentPrice',
+                                                    <ObjectNumber state="Success" number="{path: 'wishList>currentPrice',
                                                             formatter: '.formatter.formatPrice'}" />
                                                 </HBox>
                                             </HBox>
@@ -50,16 +51,14 @@ xmlns:dnd-grid="sap.f.dnd">
                                                     <Label text="Old price:" />
                                                 </HBox>
                                                 <HBox>
-                                                    <ObjectNumber state="Error" number="{path: 'invoice>priceBeforeDiscount',
+                                                    <ObjectNumber state="Error" number="{path: 'wishList>priceBeforeDiscount',
                                                                 formatter: '.formatter.formatPrice'}" />
                                                 </HBox>
                                             </HBox>
                                         </VBox>
                                     <ToolbarSpacer/>
-                                    <RatingIndicator enabled="false" value="{path: 'invoice>productRating'}" />
-                                </Toolbar>
-
-                                
+                                    <RatingIndicator enabled="false" value="{path: 'wishList>productRating'}" />
+                                </Toolbar>        
                     </VBox>
                 </VBox>
             </f:GridListItem>
