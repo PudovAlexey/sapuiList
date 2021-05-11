@@ -182,6 +182,7 @@
             <Title  textAlign="Center" text="{homePageModel>/TimerBlock/Title}"/>
             <HBox>
                 <Circle/>
+                
             </HBox>
         </VBox>
     </FlexBox>
