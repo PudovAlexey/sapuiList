@@ -25,8 +25,6 @@ sap.ui.define([
 					}
 				}
             ]
-
-            debugger
         },
         onBeforeRendering() {
             let oModel =  this.getOwnerComponent().getModel("shoppingCart")
@@ -38,7 +36,7 @@ sap.ui.define([
 
         _convertLocalStorage() {
             this._oShoppingCartModel.setProperty("/shoppingCart", this._addedItems().shoppingCart)
-            debugger
+            
 
 
         },

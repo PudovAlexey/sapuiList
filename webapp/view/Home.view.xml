@@ -1,5 +1,192 @@
-<mvc:View controllerName="app.controller.Home" xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc'>
+<mvc:View xmlns:f="sap.f"  xmlns:l="sap.ui.layout" controllerName="app.controller.Home"  xmlns:wt="app.control"  xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc' xmlns:grid="sap.ui.layout.cssgrid" xmlns:dnd-grid="sap.f.dnd" xmlns:dnd="sap.ui.core.dnd">
     <Page>
-        <Text id="testID" text="Home"/>
+        <Carousel pages="{homePageModel>/sliderItems/}">
+            <FlexBox width="100%" justifyContent="SpaceAround">
+                <HBox width="100%">
+                    <VBox justifyContent="Center">
+                        <Title class="sapUiSmallMargin" titleStyle="H1" text="{homePageModel>title}"/>
+                        <Text class="sapUiSmallMargin" text="{homePageModel>Description}"/>
+                        <Button class="sapUiSmallMargin" visible="{=${homePageModel>Button/visible}}" text="{homePageModel>Button/text}"/>
+                    </VBox>
+                </HBox>
+                <HBox>
+                    <Image width="150%" src="{homePageModel>image}"/>
+                </HBox>
+            </FlexBox>
+        </Carousel>
+        <Panel>
+
+        <f:GridList id="gridList" items="{homePageModel>/advertisingBoxes/}">
+
+            <f:customLayout>
+                <grid:GridBoxLayout boxMinWidth="17rem" />
+            </f:customLayout>
+
+            <f:GridListItem counter="{counter}" highlight="{highlight}" type="{type}" unread="{unread}">
+                <VBox class="sapUiSmallMargin" justifyContent="SpaceBetween" height="15rem">
+                    <Image height="5rem" src="{homePageModel>icon}"/>
+                    <Title titleStyle="H2" text="{homePageModel>title}"/>
+                    <Text text="{homePageModel>text}"/>
+                </VBox>
+            </f:GridListItem>
+        </f:GridList>
+    </Panel>
+
+    <FlexBox justifyContent="Center">
+        <VBox width="100%">
+            <VBox alignItems="Center" class="sapUiSmallMarginBottom sapUiMediumMarginTop">
+            <Title titleStyle="H1" textAlign="Center" text="{homePageModel>/TopCategories/title}"/>
+            <Text textAlign="Center" text="{homePageModel>/TopCategories/description}"/>
+            </VBox>
+
+            <grid:CSSGrid
+            width="100%"
+			id="grid1"
+			gridAutoFlow="Column"
+			gridTemplateColumns="repeat(1fr, 1fr)"
+			gridTemplateRows="repeat(2, 11rem)"
+			gridAutoRows="2rem"
+			gridGap="1rem 0.5rem">
+			<VBox class="demoBox">
+				<layoutData>
+					<grid:GridItemLayoutData gridRow = "1 / 3" />
+				</layoutData>
+                    <GenericTile  size="Responsive" width="90%" backgroundImage="{homePageModel>/TopCategories/categories/0/image}" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout-pink" 
+                        header="{homePageModel>/TopCategories/categories/0/Discount}"  press="onPress"
+                     subheader="{homePageModel>/TopCategories/categories/0/categoryName}">
+                    <TileContent>
+                        <Link href="{homePageModel>/TopCategories/categories/0/Link/link}" text="{homePageModel>/TopCategories/categories/0/Link/text}"/>
+                    </TileContent>
+                </GenericTile>
+			</VBox>
+			<VBox class="demoBox">
+				<layoutData>
+					<grid:GridItemLayoutData gridColumn = "2 / 5" />
+				</layoutData>
+
+                    <GenericTile  size="Responsive" width="90%" backgroundImage="{homePageModel>/TopCategories/categories/1/image}" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                        header="Country-Specific Profit Margin"  press="onPress"
+                     subheader="Subtitle">
+                     <TileContent>
+                        <Link href="{homePageModel>/TopCategories/categories/1/Link/link}" text="{homePageModel>/TopCategories/categories/1/Link/text}"/>
+                    </TileContent>
+                </GenericTile>
+			</VBox>
+
+            <VBox class="demoBox">
+				<layoutData>
+					<grid:GridItemLayoutData gridColumn = "2" />
+				</layoutData>
+
+                    <GenericTile  size="Responsive"  idth="100%" backgroundImage="{homePageModel>/TopCategories/categories/2/image}" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                        header="Country-Specific Profit Margin"  press="onPress"
+                     subheader="Subtitle">
+                     <TileContent>
+                        <Link href="{homePageModel>/TopCategories/categories/2/Link/link}" text="{homePageModel>/TopCategories/categories/2/Link/text}"/>
+                    </TileContent>
+                </GenericTile>
+			</VBox>
+
+            <VBox class="demoBox">
+				<layoutData>
+					<grid:GridItemLayoutData gridColumn = "3" />
+				</layoutData>
+
+                       <GenericTile  size="Responsive"  width="100%" backgroundImage="{homePageModel>/TopCategories/categories/3/image}" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                        header="Country-Specific Profit Margin"  press="onPress"
+                     subheader="Subtitle">
+                     <TileContent>
+                        <Link href="{homePageModel>/TopCategories/categories/3/Link/link}" text="{homePageModel>/TopCategories/categories/3/Link/text}"/>
+                    </TileContent>
+                </GenericTile>
+			</VBox>
+		</grid:CSSGrid>
+        </VBox>
+    </FlexBox>
+
+    <FlexBox class="sapUiMediumMargin" justifyContent="SpaceAround" backgroundDesign="Solid">
+            <VBox>
+
+            <GenericTile justifyContent="Center" width="30rem" size="Responsive" backgroundImage="{homePageModel>/videoBlock/videoBG}" class="sapUiTinyMarginBegin sapUiTinyMarginTop videoLayout" press=".onVideoPlay">
+             <TileContent justifyContent="Center">
+                <Button icon="{homePageModel>/videoBlock/videoPlay}"/>
+            </TileContent>
+        </GenericTile>
+    </VBox>
+            <VBox class="sapUiSmallMarginLeft" width="30rem" justifyItems="Center">
+                <Title text="{homePageModel>/videoBlock/subTitle}"/>
+                <Title text="{homePageModel>/videoBlock/title}"/>
+                <Text text="{homePageModel>/videoBlock/text}"/>
+                <Button text="{homePageModel>/videoBlock/videoButton}"/>
+            </VBox>
+
+    </FlexBox>
+
+    <FlexBox class="sapUiSmallMargin" alignItems="Center">
+        <VBox class="sapUiSmallMargin" alignItems="Center">
+            <Title textAlign="Center" titleStyle="H1" text="{homePageModel>/TrendingProducts/title}"/>
+            <Text  textAlign="Center" text="{homePageModel>/TrendingProducts/subTitle}"/>
+
+
+                <f:GridList visible="true" id="SwitchTableView" growing="true"
+                growingThreshold="6"
+                growingScrollToLoad="false" items="{homePageModel>/TrendingProducts/trendingList/}">
+
+                    <f:dragDropConfig>
+                        <dnd:DragInfo sourceAggregation="items" />
+                        <dnd-grid:GridDropInfo targetAggregation="items" dropPosition="Between" dropLayout="Horizontal" drop="onDrop" />
+                    </f:dragDropConfig>
+        
+                    <f:customLayout>
+                        <grid:GridBoxLayout boxMinWidth="20rem" />
+                    </f:customLayout>
+        
+                    <f:GridListItem press=".onInvoiceInformation" counter="{counter}" type="Navigation" unread="{unread}">
+                        <VBox height="100%">
+                            <VBox justifyContent="Center" class="sapUiSmallMargin">
+                                <layoutData>
+                                    <FlexItemData growFactor="2" shrinkFactor="0" />
+                                </layoutData>
+                                <VBox justifyItems="Center">
+                                    <Image width="100%" src="{homePageModel>icon}" />
+                                    <RatingIndicator enabled="false" value="{path: 'homePageModel>productRating'}" />
+                                        <Title titleStyle="H2" text="{homePageModel>name}"/>
+                                    <HBox justifyContent="SpaceRround">
+                                        <Label text="current price:" />
+                                        <ObjectNumber state="Success" number="{path: 'homePageModel>currentPrice',
+                                                            formatter: '.formatter.formatPrice'}" />
+        
+                                        <Label text="Old price:" />
+                                        <ObjectNumber state="Error" number="{path: 'homePageModel>priceBeforeDiscount',
+                                                                            formatter: '.formatter.formatPrice'}" />
+                                    </HBox>
+                                    <HBox>
+        
+                                        <ObjectNumber state="{= ${homePageModel>volumeInStock} > 0 ? 'Success' : 'Error' }" numberUnit="{ 
+                                                        path: 'homePageModel>volumeInStock',
+                                                        formatter: '.formatter.formatStock'}" />
+        
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                    </f:GridListItem>
+                </f:GridList>
+        </VBox>
+    </FlexBox>
+
+    <FlexBox>
+        <VBox></VBox>
+        <VBox>
+            <Title textAlign="Center" titleStyle="H1" text="{homePageModel>/TimerBlock/Subtitle}"/>
+            <Title  textAlign="Center" text="{homePageModel>/TimerBlock/Title}"/>
+            <HBox>
+                <Circle/>
+            </HBox>
+        </VBox>
+    </FlexBox>
+
+    
+
     </Page>
 </mvc:View>

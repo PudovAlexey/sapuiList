@@ -1,0 +1,424 @@
+{
+    "sliderItems": [
+        {
+            "image": "./images/slider/1.png",
+            "title": "New Season New Brand Collection",
+            "Description": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do",
+            "Button": {
+                "text": "BUY NOW",
+                "visible": true
+            }
+        },
+        {
+            "image": "./images/slider/1.png",
+            "title": "New Season New Brand Collection",
+            "Description": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do",
+            "Button": {
+                "text": "BUY NOW",
+                "visible": false
+            }
+        },
+        {
+            "image": "./images/slider/1.png",
+            "title": "New Season New Brand Collection",
+            "Description": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do",
+            "Button": {
+                "text": "BUY NOW",
+                "visible": false
+            }
+        },
+        {
+            "image": "./images/slider/1.png",
+            "title": "New Season New Brand Collection",
+            "Description": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do",
+            "Button": {
+                "text": "BUY NOW",
+                "visible": false
+            }
+        },
+        {
+            "image": "./images/slider/1.png",
+            "title": "New Season New Brand Collection",
+            "Description": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do",
+            "Button": {
+                "text": "BUY NOW",
+                "wisible": true
+            }
+        }
+    ],
+    "advertisingBoxes": [
+        {
+            "icon": "https://im0-tub-ru.yandex.net/i?id=0f2b338321361f418b1c8dc18afbf998&n=13",
+            "title": "Free Shipping Order $100",
+            "text": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do"
+        },
+        {
+            "icon": "https://im0-tub-ru.yandex.net/i?id=e478fcfef5c5cd4bae8ca0cb2b76c2cf&n=13",
+            "title": "Free Shipping Order $100",
+            "text": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do"
+        },
+        {
+            "icon": "https://im0-tub-ru.yandex.net/i?id=e62a04745da11eafe73159c541d81ff8&n=13",
+            "title": "Free Shipping Order $100",
+            "text": "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do"
+        }
+    ],
+    "TopCategories": {
+        "title": "TOP CATEGORIES",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor ut labore et dolore aliqua",
+        "categories": [
+            {
+                "image": "./images/content/girl.jpg",
+                "categoryName": "Shoes & Jewellry",
+                "Discount": "Up To 40% Off",
+                "Link": {
+                    "text": "EXPLORE MORE",
+                    "link": ""
+                }
+            },
+            {
+                "image": "./images/content/women.jpg",
+                "categoryName": "Clothes & Accessories",
+                "Discount": "New Arrival",
+                "Link": {
+                    "text": "EXPLORE MORE",
+                    "link": ""
+                }
+            },
+            {
+                "image": "./images/content/man.jpg",
+                "categoryName": "Men’s Fashion",
+                "Discount": "store-item Now",
+                "Link": {
+                    "text": "EXPLORE MORE",
+                    "link": ""
+                }
+            },
+            {
+                "image": "./images/content/women-black.jpg",
+                "categoryName": "Men’s Fashion",
+                "Discount": "store-item Now",
+                "Link": {
+                    "text": "EXPLORE MORE",
+                    "link": ""
+                }
+            }
+        ]
+    },
+    "videoBlock": {
+        "subTitle": "WINTER COLLECTION 20% OFF",
+        "title": "TRENDING FASHION",
+        "text": "Lorem ipsum dolor sit amet, consectetur apiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sedu do eiusmod temp indidunt ut labore et dolore magna aliqua.. Quis ipsum de ultcesm. Risus commodo viverra maecenas.",
+        "videoButton": "VIEW NOW",
+        "videoBG": "./images/content/video-bg.jpg",
+        "videoPlay": "sap-icon://video"
+    },
+    "TrendingProducts": {
+        "subTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor ut labore et dolore aliqua.",
+        "title": "TRENDING PRODUCTS",
+        "text": "Lorem ipsum dolor sit amet, consectetur apiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sedu do eiusmod temp indidunt ut labore et dolore magna aliqua.. Quis ipsum de ultcesm. Risus commodo viverra maecenas.",
+        "videoButton": "VIEW NOW",
+        "trendingList": [
+            {
+                "name": "nike",
+                "goodArticle": 15739,
+                "icon": "https://f49f7a99576626a7a4f9-6ad05d6fae9750295d152a24570d770f.ssl.cf5.rackcdn.com/detailsbig/333114_Black_FlatFront_2009.jpg",
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://footballsale.ru/upload/resize_cache/iblock/46d/1200_1200_16e3e8cb80520cd868441eadd19ea6e3d/46d11fac921eafe09a10eb52ca93cc90.jpeg",
+                    "https://keeper-shop.ru/images/product_images/popup_images/shop_items_catalog_image124708.jpeg",
+                    "https://sp-man.ru/upload/iblock/d3b/d3bc25a4dbb735b54600d8364d1c5f1b.jpeg"
+                ],
+                "currentPrice": 1500,
+                "priceBeforeDiscount": 150,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis. dolor sit amet, consectur picing elit, sed do eusmod tempor incididunt ut mor more labore a doore magna aliqua. Quis into ipsum the suspendisse ultrices grda. Lorem in ipsum dolor sit amet, consectetur adipiscings elit, sed does eiusmod tempor incididunt mod labore et dolore magna aliqua. Quis ipsum in suspendisse fass a ultrices gravida. Loremon ipsum dolor st amaiet, consectetur aipiscinge elit, sed do eiusobimod tempor incididunt uts labore et doloroe gravida.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "puma",
+                "goodArticle": 2479318,
+                "volumeInStock": 140,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://a.lmcdn.ru/product/P/U/PU053CUFRGX9_8997130_1_v1.jpg",
+                    "https://images.puma.net/images/052919/02/w/1000/h/1000/fnd/RUS/",
+                    "https://rukminim1.flixcart.com/image/714/857/jt1tq4w0/cap/4/u/b/free-2195801-puma-original-imafefftkwhfrmet.jpeg"
+                ],
+                "icon": "https://images.ua.prom.st/1683108831_w200_h200_muzhskaya-kepka-puma.jpg",
+                "currentPrice": 1300,
+                "priceBeforeDiscount": 2500,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis. dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "adidas",
+                "goodArticle": 789201,
+                "volumeInStock": 73,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://assets.adidas.com/images/w_600,f_auto,q_auto/f3638353d798434f862daa8700a4f652_9366/Kepka_Baseball_chernyj_FK0898_01_standard.jpg",
+                    "https://www.proball.ru/upload/images/35797120/5dcad3a43d3285c048227ca876b0a1e8_1000_1000.jpg",
+                    "https://im9.cz/iR/importprodukt-orig/5a9/5a94bb1e4776e597659268ad3a61a71b.jpg"
+                ],
+                "icon": "https://www.saletennis.com/uploads/media/product/0001/19/thumb_18943_product_big.jpeg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "reebok",
+                "goodArticle": 7921468,
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "img": [
+                    "https://www.proball.ru/upload/images/35664735/10d261fc0a6ec8f1b639abd2306866e1_1000_1000.jpg",
+                    "https://virginmg.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/4/142-43-8_7.jpg",
+                    "https://media.alltricks.com/medium/5c6ffe9803eee.jpg"
+                ],
+                "icon": "https://gosport.shop/upload/goods/db/2a/db2ae1e73c5dfb03266491f7622c4d5d.jpg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "jeans",
+                "goodArticle": 98135478,
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://ae01.alicdn.com/kf/H8f7b23a7c2bf4906a3797a863d150dcfJ/Casual-Jogger-Pants-2020-Elastic-Sexy-Skinny-Pencil-Jeans-For-Women-Leggings-Jeans-High-Waist-Women.jpg",
+                    "https://ae01.alicdn.com/kf/HTB1bzNNKzTpK1RjSZKPq6y3UpXap/2019.jpg",
+                    "https://cdn1.ozone.ru/s3/multimedia-2/6008727122.jpg"
+                ],
+                "icon": "https://ae01.alicdn.com/kf/H8f7b23a7c2bf4906a3797a863d150dcfJ/Casual-Jogger-Pants-2020-Elastic-Sexy-Skinny-Pencil-Jeans-For-Women-Leggings-Jeans-High-Waist-Women.jpg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "skirt",
+                "goodArticle": 4689214624,
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://tennis-ekip.ru/wa-data/public/shop/products/22/04/40422/images/13554/misimmlTVE1.250.jpg",
+                    "https://5.imimg.com/data5/XB/JE/MY-5539622/ladies-skirts-500x500.jpg",
+                    "https://ladynumber1.com/wp-content/uploads/2017/01/modnye-yubki-so-skladkami.jpg"
+                ],
+                "icon": "https://5.imimg.com/data5/XB/JE/MY-5539622/ladies-skirts-500x500.jpg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "classic pants",
+                "goodArticle": 7921468,
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://wht.ru/upload/iblock/ce5/ce5a8e16a950dcf1e5aac93e7fd0ea4c.jpg",
+                    "https://wht.ru/upload/iblock/5e6/5e63753ced83962d07dda0866b0f91bd.jpg",
+                    "https://fdtactical.ru/wp-content/uploads/2020/09/propper-stl-iii-pant-khaki-f52771g250_1.jpg"
+                ],
+                "icon": "https://ae01.alicdn.com/kf/HTB14HhgSVXXXXXjaFXXq6xXFXXXD/-.jpg_q50.jpg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            },
+            {
+                "name": "modern pents",
+                "goodArticle": 792166987,
+                "volumeInStock": 20,
+                "choosedItems": 0,
+                "productRating": 4,
+                "availableSizes": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ],
+                "choosedSize": "",
+                "choosedColor": "",
+                "avalibleColor": [
+                    "Green",
+                    "Red",
+                    "Pink",
+                    "Yellow",
+                    "Purple",
+                    "Orange"
+                ],
+                "tags": [
+                    "SweetShot",
+                    "Man Accessories",
+                    "T-Shirt"
+                ],
+                "img": [
+                    "https://skidka-voronezh.ru/images/prodacts/sourse/11728/11728460_mujskie-bryuki-nike-modern-jogger-832172-091.jpg",
+                    "https://images.puma.net/images/581237/32/mod01/fnd/RUS/w/1000/h/1000/bg/255,255,255",
+                    "https://ae01.alicdn.com/kf/HTB1wTwqa8iE3KVjSZFMq6zQhVXaY/-.jpg_q50.jpg"
+                ],
+                "icon": "https://a.lmcdn.ru/img389x562/P/U/PU053EWIHFO2_10607679_1_v1.jpg",
+                "currentPrice": 150,
+                "priceBeforeDiscount": 250,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
+                "curreny": "RUB"
+            }
+        ]
+    },
+    "TimerBlock": {
+        "Title": "DEAL OF THE DAY",
+        "Subtitle": "STYLE FASHION",
+        "discountEnd": "15.05.2021"
+    },
+    "BrandsBlock": [],
+    "Blog": {
+        "Title": "FROM OUR BLOG",
+        "Subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodmoe tempor incididunt ut labore et dolore aliqua.",
+        "BlogItems": []
+    }
+}

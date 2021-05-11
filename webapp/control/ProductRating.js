@@ -84,7 +84,7 @@ sap.ui.define([
 			oRm.class("myAppDemoWTProductRating");
 			oRm.openEnd();
 			oRm.renderControl(oControl.getAggregation("_rating"));
-			oRm.renderControl(oControl.getAggregation("_label"));
+			// oRm.renderControl(oControl.getAggregation("_label"));
 			oRm.renderControl(oControl.getAggregation("_button"));
 			oRm.close("div");
 		}

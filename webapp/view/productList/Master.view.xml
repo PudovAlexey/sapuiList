@@ -1,6 +1,6 @@
 <mvc:View controllerName="app.controller.Master" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
     <Page id="masterId" 
-    title="{i18n>Categories} {path: 'invoice>types',
+    title="{i18n>Categories} {path: 'productListItems>types',
             formatter: '.formatter.listLength'}" 
             preserveHeaderStateOnScroll="true" 
             toggleHeaderOnTitleClick="false">
@@ -11,14 +11,13 @@
                 </Toolbar>
             <List id="items" 
              width="auto" items="{
-        path: 'invoice>/Invoices',
+        path: 'productListItems>/',
         sorter: {
             path: 'ProductName'
         }
         }">
-                <items>
-                    <!-- <Image src="{invoice>icon}"/> -->
-                    <StandardListItem icon="{invoice>icon}" title="{invoice>ProductName}" iconDensityAware="false" iconInset="false" type="Navigation" press="onListItemPressed" />
+                <items> 
+                    <StandardListItem icon="{productListItems>icon}" title="{productListItems>ProductName}" iconDensityAware="false" iconInset="false" type="Navigation" press="onListItemPressed" />
                 </items>
             </List>
     </Page>

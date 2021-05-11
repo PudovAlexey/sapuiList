@@ -1,48 +1,48 @@
-<mvc:View controllerName="app.controller.InvoiceInformation" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:wt="app.control" busyIndicatorDelay="0">
+<mvc:View controllerName="app.controller.InvoiceInformation" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.ui.layout.form" xmlns:dnd="sap.ui.core.dnd" xmlns:dnd-grid="sap.f.dnd" xmlns:wt="app.control">
 	<Page id="employeePage" title="{i18n>ItemInformation} {i18n>ItemId}" class="sapUiResponsiveContentPadding">
 		<content>
 			<HBox>
-				<Carousel width="70%">
-					<Image src="{path: 'invoice>img/0'}" />
-					<Image src="{path: 'invoice>img/1'}" />
-					<Image src="{path: 'invoice>img/2'}" />
+				<Carousel width="70%" pages="{
+					path: 'productListItems>img/'
+				}">
+					<Image src="{path: 'productListItems>'}" />
 				</Carousel>
 				<VBox width="150%">
-					<Title text="{path: 'invoice>name'}" />
+					<Title text="{path: 'productListItems>name'}" />
 					<Toolbar>
 						<VBox>
 							<HBox>
 								<Label text="current price: " />
-								<ObjectNumber state="Success" number="{path: 'invoice>currentPrice'}" />
+								<ObjectNumber state="Success" number="{path: 'productListItems>currentPrice'}" />
 							</HBox>
 							<HBox>
 								<Label text="old price: " />
-								<ObjectNumber state="Error" number="{path: 'invoice>priceBeforeDiscount'}" />
+								<ObjectNumber state="Error" number="{path: 'productListItems>priceBeforeDiscount'}" />
 							</HBox>
 						</VBox>
-						<RatingIndicator enabled="false" value="{path: 'invoice>productRating'}" />
-						<ObjectNumber number="{path: 'invoice>reviews',
+						<RatingIndicator enabled="false" value="{path: 'productListItems>productRating'}" />
+						<ObjectNumber number="{path: 'productListItems>reviews',
 													formatter: '.formatter.getRating'}" />
 					</Toolbar>
 					<Label text="Review:" />
 					<Text text="Lorem ipsum dolor sit amet, consectetur adipscg elit, sed do eiusmod tempor incididunt ut laborea et dolore magna alqua. Quis ipsum suspendssem moa ultrices gravida." />
 					<Label text="Color:" />
-						<SegmentedButton id="choosedColor" items="{path: 'invoice>avalibleColor'}">
+					<SegmentedButton id="choosedColor" items="{path: 'productListItems>avalibleColor'}">
 						<items>
-							
 
-									<SegmentedButtonItem width="5rem" text="{invoice>}" key="{invoice>}"/>
+
+							<SegmentedButtonItem width="5rem" text="{productListItems>}" key="{productListItems>}" />
 
 						</items>
 					</SegmentedButton>
 					<Label text="Size:" />
 
-					
-					<SegmentedButton id="choosedSize" items="{path: 'invoice>availableSizes'}" key="{invoice>}">
-						<items>
-							
 
-									<SegmentedButtonItem width="5rem" text="{invoice>}" key="{invoice>}" class="customColor" />
+					<SegmentedButton id="choosedSize" items="{path: 'productListItems>availableSizes'}" key="{productListItems>}">
+						<items>
+
+
+							<SegmentedButtonItem width="5rem" text="{productListItems>}" key="{productListItems>}" class="customColor" />
 
 						</items>
 					</SegmentedButton>
@@ -72,7 +72,7 @@
 
 					</f:SimpleForm>
 					<HBox>
-						<StepInput id="counter" min="0" max="{invoice>volumeInStock}" width="15%" />
+						<StepInput id="counter" min="0" max="{productListItems>volumeInStock}" width="15%" />
 						<Button press=".onAddItem" icon="sap-icon://cart-3" text="Add to cart" />
 						<Button press=".onAddItem" icon="sap-icon://thumb-up" text="Add to Wish list" />
 					</HBox>
@@ -83,8 +83,8 @@
 			<IconTabBar id="iconTabBar" headerBackgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
 				<items>
 					<IconTabFilter text="Description">
-						<Label text="{path: 'invoice>product/0/name'}" />
-						<Text text="{path: 'invoice>product/0/description'}" />
+						<Label text="{path: 'productListItems>product/0/name'}" />
+						<Text text="{path: 'productListItems>product/0/description'}" />
 					</IconTabFilter>
 
 					<IconTabFilter text="Additional information">
@@ -92,21 +92,19 @@
 					</IconTabFilter>
 
 					<IconTabFilter text="Reviews">
-						<List id="reviews" class="sapUiResponsiveMargin" width="auto" items="{path: 'invoice>reviews'}">
+						<List id="reviews" class="sapUiResponsiveMargin" width="auto" items="{productListItems>reviews}">
 							<items>
-								<CustomListItem>
+								<CustomListItem visible="{= ${productListItems>rating}.splice(1, 1)}" id="reviewsItem">
 									<content>
 										<HBox alignItems="Center" class="sapUiTinyMarginBottom">
 											<Avatar />
-											<Title text="{invoice>FirstName}" class="sapUiSmallMarginBegin" />
+											<Title text="{productListItems>FirstName}" class="sapUiSmallMarginBegin" />
 										</HBox>
 										<Toolbar>
-											<Text text="{invoice>message}" />
-											<Link src="{invoice>mail}" />
+											<Text text="{productListItems>message}" />
+											<Link src="{productListItems>mail}" />
 											<ToolbarSpacer />
-											<RatingIndicator enabled="false" value="{invoice>rating}" />
-
-
+											<RatingIndicator enabled="false" value="{productListItems>rating}" />
 										</Toolbar>
 									</content>
 								</CustomListItem>
@@ -119,28 +117,54 @@
 			</IconTabBar>
 		</content>
 		<content>
-			<f:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
-				<Label text="Add your review" />
-				<f:content>
-					<Toolbar>
-						<Label text="Your Rating" />
-						<ToolbarSpacer />
-						<wt:ProductRating id="rating" class="sapUiSmallMarginStart" change="onRatingChange" />
-					</Toolbar>
-					<VBox width="1000%">
-						<HBox width="100%">
-							<Input width="50%" />
-							<Input width="50%" />
-						</HBox>
-						<TextArea height="15rem" cols="50" width="50rem" />
-						<Button text="LEAVE REVIEW" />
-					</VBox>
-				</f:content>
-
-			</f:SimpleForm>
+			<f:SimpleForm id="onReview"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1" >
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="Address"/>
+					<ToolbarSpacer />
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Toolbar ariaLabelledBy="Title2">
+					<Title id="Title2" text="Add your review"/>
+				</Toolbar>
+				<Toolbar>
+					<Label text="Your Rating"/>
+					<RatingIndicator id="RatingValue"/>
+				</Toolbar>
+				<Toolbar>
+					<Input id="NameValue" placeholder="Your Name"/>
+					<Input id="LastName" placeholder="Your Last name"/>
+					<ToolbarSpacer/>
+						<Input id="EmailValue" width="40rem" placeholder="Your E-mail Address"/>
+				</Toolbar>
+				<Toolbar height="10rem">
+					<TextArea id="MessageValue" width="100%" height="10rem" placeholder="Your review here" />
+				</Toolbar>
+				<Toolbar>
+					<Button press=".onReviewSend" text="LEAVE REVIEW"/>
+				</Toolbar>
+			</f:content>
+		</f:SimpleForm>
 		</content>
-		<content>
-			<Title titleStyle="H1" bold="true" textAlign="Center" width="100%" text="RELATED PRODUCTS" />
+		<!-- <content> -->
+		<!-- <Title titleStyle="H1" bold="true" textAlign="Center" width="100%" text="RELATED PRODUCTS" />
 			<HBox width="100%" justifyContent="SpaceBetween">
 				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
 
@@ -148,7 +172,50 @@
 
 				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard3" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
 				<wt:ProductCard src="https://giftprime.ru/wp-content/uploads/2018/10/4311.41_2_tif_1000x1000.jpg" title="Baby Girls Dress Designs" rating="4" currentPrice="34.00" oldPrice="27.00" indicatorState="true" indicatorValue="sale" id="ShoppingCard4" class="sapUiSmallMarginStart myTestedStyles" link="http://localhost:8080/index.html#/invoice/3/2" textLink="Watch now" />
-			</HBox>
-		</content>
+			</HBox> -->
+
+		<!-- <f:GridList visible="true" growing="true" growingScrollToLoad="true" id="SwitchTableView" items="{productListItems>product}">
+
+            <f:dragDropConfig>
+                <dnd:DragInfo sourceAggregation="items" />
+                <dnd-grid:GridDropInfo targetAggregation="items" dropPosition="Between" dropLayout="Horizontal" drop="onDrop" />
+            </f:dragDropConfig>
+
+            <f:customLayout>
+                <grid:GridBoxLayout boxMinWidth="17rem" />
+            </f:customLayout>
+
+            <f:GridListItem press=".onInvoiceInformation" counter="{counter}" type="Navigation" unread="{unread}">
+                <VBox height="100%">
+                    <VBox justifyContent="Center" class="sapUiSmallMargin">
+                        <layoutData>
+                            <FlexItemData growFactor="2" shrinkFactor="0" />
+                        </layoutData>
+                        <VBox justifyItems="Center">
+                            <Image width="100%" src="{productListItems>icon}" />
+                            <RatingIndicator enabled="false" value="{path: 'productListItems>productRating'}" />
+                                <Title titleStyle="H2" text="{productListItems>name}"/>
+                            <HBox justifyContent="SpaceRround">
+                                <Label text="current price:" />
+                                <ObjectNumber state="Success" number="{path: 'productListItems>currentPrice',
+                                                    formatter: '.formatter.formatPrice'}" />
+
+                                <Label text="Old price:" />
+                                <ObjectNumber state="Error" number="{path: 'productListItems>priceBeforeDiscount',
+                                                                    formatter: '.formatter.formatPrice'}" />
+                            </HBox>
+                            <HBox>
+
+                                <ObjectNumber state="{= ${productListItems>volumeInStock} > 0 ? 'Success' : 'Error' }" numberUnit="{ 
+                                                path: 'productListItems>volumeInStock',
+                                                formatter: '.formatter.formatStock'}" />
+
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </f:GridListItem>
+        </f:GridList> -->
+		<!-- </content> -->
 	</Page>
 </mvc:View>

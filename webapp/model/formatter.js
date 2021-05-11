@@ -15,10 +15,25 @@ return {
     },
 
     getRating: function(sStatus) {
+        
 
-        let reviewsCount = sStatus ? sStatus.length : null
+        let reviewsCount = sStatus ? sStatus.length : 0
+        console.log(reviewsCount)
+        
 
         return `(Reviews ${reviewsCount})`
+    },
+
+    formatStock: function (sStatus) {
+        switch(sStatus) {
+            case 0: 
+                return 'Out of Stock'
+                break
+            default:
+                return `available for purchase ${sStatus} goods`
+                break
+        }
+        
     }
 }
 })

@@ -36,3 +36,16 @@
   .relatedProduct__old {
      text-decoration: line-through;
   }
+
+  .tileLayout-pink {
+   background-position: center center !important;
+    height: 200% !important;
+  }
+
+  .tileLayout {
+   background-position: top center !important;
+  }
+
+  /* .videoLayout {
+   height: 150% !important;
+  } */

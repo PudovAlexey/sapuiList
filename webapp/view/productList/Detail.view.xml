@@ -1,73 +1,57 @@
-<mvc:View controllerName="app.controller.Detail" xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc' xmlns:f="sap.ui.layout.form">
-    <Page id="detailId" class="myAppDemoDetail" title="Detail page">
+<mvc:View controllerName="app.controller.Detail" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f" xmlns:dnd="sap.ui.core.dnd" xmlns:wt="app.control" xmlns:dnd-grid="sap.f.dnd">
+    <Page id="panelForGridList">
+            <Toolbar height="3rem">
+                <Label text="View:"/>
+                <Button press=".onTableView" icon="sap-icon://chart-table-view"/>
+                <Button press=".onListView" icon="sap-icon://increase-line-height"/>
+                <Button text="fucking buulshet" press=".bullshet"/>
+            </Toolbar>
+        <HBox>
+        <l:VerticalLayout growing="true" growingScrollToLoad="true" width="17rem">
+            <VBox class="sapUiContentPadding">
+                <VBox>
+                    <Title text="SEARCH" />
+                    <HBox>
+                        <SearchField search=".onSearchProductName"  id="SearchField"/>
+                    </HBox>
 
-        <Bar>
-            <contentRight>
-                <Button icon="sap-icon://full-screen" press=".onFullScreen" type="Transparent" width="auto" />
-                <Button icon="sap-icon://decline" press=".onCloseDetail" type="Transparent" width="auto" />
-            </contentRight>
-        </Bar>
-        <Panel>
-            <ObjectListItem id='Object' title="{invoice>ProductName} {}" />
-        </Panel>
+                </VBox>
+                <VBox>
+                    <Title text="PRICE FILTER" />
+                    <RangeSlider id="priceFilter" change=".onRangeChange" value="2000" value2="8000" max="10000" class="sapUiSmallMarginBottom" />
+                    <HBox justifyContent="SpaceBetween">
+                        <ObjectStatus id="priceCounter" />
+                    </HBox>
+                </VBox>
+                <VBox>
+                    <Title text="COLOR FILTER" />
 
-        <content>
-            <List id="items" class="sapUiResponsiveMargin" width="auto" items="{
-            path: 'invoice>product',
-            sorter: {
-                path: 'ProductName'
-            }
-            }">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title src="{invoice>icon}" text="{invoice>ProductName}" bold="true" />
-                        <ToolbarSpacer />
-                        <SearchField id="searchDetails" search=".onDetailSearch" width="30%" />
-                        <Button icon="sap-icon://sort" press=".onSort" />
-                        <Button icon="sap-icon://filter" press="" />
-                    </Toolbar>
-                </headerToolbar>
-                <items>
-                    <CustomListItem id="DetailList" icon="{invoice>icon}" title="{invoice>name}" iconDensityAware="false" iconInset="false" type="Navigation" press=".onInvoiceInformation" numberState="Success" number="{path: 'invoice>currentPrice',
-                            formatter: '.formatter.formatPriceAfterDiscount'}">
-
-                        <content>
-                                <Avatar src="{invoice>icon}" class="sapUiTinyMarginBegin sapUiSmallMarginTop sapUiSmallMarginBottom" />
-                                <Title text="{invoice>name}" level="H5" class="sapUiTinyMarginBegin sapUiTinyMarginBottom" />
-                                <ToolbarSpacer />
-                                <VBox class="sapUitinyMarginTop">
-                                    <HBox>
-                                        <HBox>
-                                            <Label text="current price:" />
-                                        </HBox>
-                                        <HBox>
-                                            <ObjectNumber state="Success" number="{path: 'invoice>currentPrice',
-                                                    formatter: '.formatter.formatPrice'}" />
-                                        </HBox>
-                                    </HBox>
-                                    <HBox>
-                                        <HBox>
-                                            <Label text="Old price:" />
-                                        </HBox>
-                                        <HBox>
-                                            <ObjectNumber state="Error" number="{path: 'invoice>priceBeforeDiscount',
-                                                        formatter: '.formatter.formatPrice'}" />
-                                        </HBox>
-                                    </HBox>
-                                </VBox>
-                                <Toolbar>
-                                    <RatingIndicator/>
-                                    <ToolbarSpacer/>
-                                    <Button icon="sap-icon://thumb-up"/>
-                                    <Button  icon="sap-icon://cart-3"/>
-                                    <Button  icon="sap-icon://add" id="addButton"
-                                    press="handlePopoverPress"/>
-
-                                </Toolbar>
-                        </content>
-                    </CustomListItem>
-                </items>
-            </List>
-        </content>
+                    <List select=".onColorFilter" mode="MultiSelect" id="colorItems" width="auto" items="{filterFields>/FilterFields/ColorFilter}">
+                        <items>
+                            <StandardListItem title="{filterFields>}" iconDensityAware="false" iconInset="false" />
+                        </items>
+                    </List>
+                </VBox>
+                <VBox>
+                    <Title text="SIZE FILTER" />
+                    <List select=".onSizeFilter" mode="MultiSelect" id="sizeItems" width="auto" items="{filterFields>/FilterFields/SizeFilter}">
+                        <items>
+                            <StandardListItem title="{filterFields>}" iconDensityAware="false" iconInset="false" press="onListItemPressed" />
+                        </items>
+                    </List>
+                </VBox>
+                <VBox>
+                    <Title text="POPULAR TAGS" />
+                    <List select=".onTagsFilter" mode="MultiSelect" id="tagsItems" width="auto" items="{filterFields>/FilterFields/PopularTegs}">
+                        <items>
+                            <StandardListItem title="{filterFields>}" iconDensityAware="false" iconInset="false" press="onListItemPressed" />
+                        </items>
+                    </List>
+                </VBox>
+            </VBox>
+        </l:VerticalLayout>
+            <core:Fragment fragmentName="app.view.productList.fragment.DetailTableView" type="XML"/>
+            <core:Fragment fragmentName="app.view.productList.fragment.DetailListView" type="XML"/>
+        </HBox>
     </Page>
 </mvc:View>

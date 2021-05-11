@@ -3,7 +3,7 @@
 		<customHeader>
 			<Bar>
 				<contentLeft>
-					<Image />	
+					<Image class="sapUiSmallMargin" src="../images/logo.png"/>	
 				</contentLeft>
 
 				<contentMiddle>

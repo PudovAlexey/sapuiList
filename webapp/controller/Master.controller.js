@@ -5,7 +5,6 @@ sap.ui.define([
     "sap/ui/model/Sorter"
 ], function(BaseController , Filter, FilterOperator, Sorter) {
 'use strict'
-
     return BaseController.extend("app.controller.Master", {
 
         onInit: function() {
@@ -40,7 +39,7 @@ sap.ui.define([
         onListItemPressed : function(oEvent){
 			var oItem, oCtx
             oItem = oEvent.getSource();
-			oCtx = oItem.getBindingContext('invoice');
+			oCtx = oItem.getBindingContext('productListItems');
             this.getRouter().navTo("invoice", {
                 invoiceId: oCtx.getProperty("id") 
             })

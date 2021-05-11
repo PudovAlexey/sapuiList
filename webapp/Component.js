@@ -1,8 +1,7 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/odata/v2/ODataModel"
-], function (UIComponent, JSONModel, ODataModel) {
+    "sap/ui/model/json/JSONModel"
+], function (UIComponent, JSONModel) {
 
     return UIComponent.extend("app.Component", {
         metadata: {
@@ -10,14 +9,19 @@ sap.ui.define([
         },
 
         init: function () {
-
-            var oModel = new ODataModel("http://services.odata.org/Northwind/Northwind.svc/$metadata", true);
-            
-
-            debugger
             UIComponent.prototype.init.apply(this, arguments)
 
-            this.getRouter().initialize();
+            fetch('http://localhost:3000/product')
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data)
+                var oModel = new JSONModel(data);
+                this.setModel(oModel, "productListItems");
+            });
+
+        this.getRouter().initialize();
         }
     })
 

@@ -1,0 +1,28 @@
+{
+    "FilterFields": {
+    "ColorFilter": [
+        "Blue",
+        "Red",
+        "Green",
+        "Orange",
+        "Black",
+        "Purple",
+        "Brown"
+    ],
+    "SizeFilter": [
+        "X-small",
+        "Small",
+        "Medium",
+        "Large",
+        "XXL"
+    ],
+    "PopularTegs": [
+        "Sweetshirt",
+        "Man Accessories",
+        "Fashion",
+        "Polo",
+        "T-Shirt",
+        "Jewellery"
+    ]
+    }
+}

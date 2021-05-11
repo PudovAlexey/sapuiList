@@ -14,6 +14,9 @@
 		"description": "appDescription",
 		"applicationVersion": {
 			"version": "1.0.0"
+		},
+
+		"dataSources": {
 		}
 	},
 	"sap.ui": {
@@ -73,6 +76,15 @@
 			"wishList": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "wishList.json"
+			},
+			"filterFields": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "filterFields.json"
+			},
+
+			"homePageModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "homePage.json"
 			}
 		},
 		"routing": {

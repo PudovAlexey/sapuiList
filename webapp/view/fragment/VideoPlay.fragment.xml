@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+   <Dialog id="videoPlay" title="VIDEO PLAY">
+      <customHeader>
+         <Bar>
+            <contentRight>
+               <Button press=".onVideoClose" icon="sap-icon://decline"/>
+         </contentRight>
+         </Bar>
+      </customHeader>
+
+      <core:HTML content='
+      &lt;div class=&quot;content&quot;
+      &gt;&lt;div&gt;&lt;/div&gt;&lt;iframe scrolling=&quot;no&quot; width=&quot;1200px&quot;  height=&quot;700px&quot; target=&quot;_blank&quot; src=&quot;https://www.youtube.com/embed?v=TVFhv2yhuZ0&quot;&gt;Learn more about Lorem Ipsum ...&lt;/iframe&gt;&lt;/div&gt;'></core:HTML>
+   </Dialog>
+</core:FragmentDefinition>
