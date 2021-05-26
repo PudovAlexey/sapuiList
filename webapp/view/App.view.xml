@@ -1,43 +1,121 @@
 <mvc:View controllerName="app.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-	<Page>
-		<customHeader>
-			<Bar>
-				<contentLeft>
-					<Image class="sapUiSmallMargin" src="../images/logo.png"/>	
-				</contentLeft>
+	<Shell>
+		<Page floatingFooter="true">
+			<customHeader>
+				<Bar>
+					<contentLeft>
+						<Image class="sapUiSmallMargin" src="../images/logo.png" />
+					</contentLeft>
 
-				<contentMiddle>
-					<Button press=".onHomeClick" text="HOME"/>
-					<Button press=".onShopClick" text="SHOP"/>
-					<Button text="PAGE"/>
-					<Button text="BLOG"/>
-					<Button text="CONTACT"/>
-				</contentMiddle>
+					<contentMiddle>
+						<Button press=".onHomeClick" text="HOME" />
+						<Button press=".onShopClick" text="SHOP" />
+						<Button text="PAGE" />
+						<Button press=".onBlogClick" text="BLOG" />
+						<Button press=".onContactClick" text="CONTACT"/>
+					</contentMiddle>
 
-				<contentRight>
-					<Button icon="sap-icon://account"/>
-					<Button icon="sap-icon://search"/>
-					<Button press="onWishListClick" icon="sap-icon://thumb-up">
-						<customData>
-							<BadgeCustomData
-								id="bagdeWishList"
-								key="badge"
-								value="0"/>
-						</customData>
-					</Button>
-					<Button press="onShoppingCartClick" icon="sap-icon://cart-full">
-						<customData>
-							<BadgeCustomData
-								id="bagdeCart"
-								key="badge"
-								value="0"/>
-						</customData>
-					</Button>
-				</contentRight>
-			</Bar>
-		</customHeader>
-		<Shell>
-			<SplitApp id="app" class=".myAppDemoWT"/>
-		</Shell>
-	</Page>
+					<contentRight>
+						<Button press=".onAuthPageClick" icon="sap-icon://account" />
+						<Button icon="sap-icon://search" />
+						<Button press="onWishListClick" icon="sap-icon://thumb-up">
+							<customData>
+								<BadgeCustomData id="bagdeWishList" key="badge" value="0" />
+							</customData>
+						</Button>
+						<Button press="onShoppingCartClick" icon="sap-icon://cart-full">
+							<customData>
+								<BadgeCustomData id="bagdeCart" key="badge" value="0" />
+							</customData>
+						</Button>
+					</contentRight>
+				</Bar>
+			</customHeader>
+			<SplitApp id="app" class=".myAppDemoWT" />
+
+
+				<Toolbar design="Solid" class="footer__page sapUiSmallMargin">
+					<VBox alignItems="SpaceBetween" justifyContent="SpaceBetween" height="13rem">
+						<Image class="sapUiMediumMarginBottom" src="../images/logo.png" />
+						<Link text="No. 342- London Oxford Street, 012 United States" />
+						<Link text="Youremail@gmail.com" />
+						<Link text="+0283 838 8393" />
+						<HBox>
+							<GenericTile justifyContent="Center" width="1.5rem" backgroundImage="../images/icons/social/1.svg" size="Responsive" class=" socialMediaTile">
+								<TileContent justifyContent="Center">
+									<VBox>
+										<Link class="Link" text="text" href="https://www.google.com" />
+									</VBox>
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile justifyContent="Center" width="1.5rem" backgroundImage="../images/icons/social/2.svg" size="Responsive" class="sapUiSmallMarginBegin socialMediaTile">
+								<TileContent justifyContent="Center">
+									<VBox>
+										<Link class="Link" text="text" href="https://www.google.com" />
+									</VBox>
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile justifyContent="Center" width="1.5rem" backgroundImage="../images/icons/social/3.svg" size="Responsive" class="sapUiSmallMarginBegin socialMediaTile">
+								<TileContent justifyContent="Center">
+									<VBox>
+										<Link class="Link" text="text" href="https://www.google.com" />
+									</VBox>
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile justifyContent="Center" width="1.5rem" backgroundImage="../images/icons/social/4.svg" size="Responsive" class="sapUiSmallMarginBegin socialMediaTile">
+								<TileContent justifyContent="Center">
+									<VBox>
+										<Link class="Link" text="text" href="https://www.google.com" />
+									</VBox>
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile justifyContent="Center" width="1.5rem" backgroundImage="../images/icons/social/5.svg" size="Responsive" class="sapUiSmallMarginBegin socialMediaTile">
+								<TileContent justifyContent="Center">
+									<VBox>
+										<Link class="Link" text="text" href="https://www.google.com" />
+									</VBox>
+								</TileContent>
+							</GenericTile>
+							<Link />
+							<Link />
+							<Link />
+							<Link />
+							<Link />
+						</HBox>
+					</VBox>
+					<ToolbarSpacer />
+					<VBox alignItems="SpaceBetween" justifyContent="SpaceBetween" height="13rem">
+						<Title class="sapUiMediumMarginBottom" text="Useful Links" />
+						<Link text="About Us" />
+						<Link text="Privacy Policy" />
+						<Link text="Terms and Conditions" />
+						<Link text="Contact Us" />
+						<Link text="Help and Support" />
+					</VBox>
+					<ToolbarSpacer />
+
+					<VBox alignItems="SpaceBetween" justifyContent="SpaceBetween" height="13rem">
+						<Title class="sapUiMediumMarginBottom" text="My Account" />
+						<Link text="My Account" />
+						<Link text="My Cart" />
+						<Link text="My WIshlist" />
+						<Link text="Registration" />
+						<Link text="Check Out" />
+					</VBox>
+					<ToolbarSpacer />
+
+					<Title />
+					<ToolbarSpacer />
+					<VBox width="30%" alignItems="SpaceBetween" justifyContent="SpaceBetween" height="13rem">
+						<Title class="sapUiMediumMarginBottom" text="Subscribe Our Newsletter" />
+						<Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida." />
+						<SearchField />
+					</VBox>
+				</Toolbar>
+		</Page>
+	</Shell>
 </mvc:View>

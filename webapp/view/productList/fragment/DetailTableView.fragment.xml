@@ -22,7 +22,7 @@ controllerName="app.controller.Detail" xmlns="sap.m" xmlns:core="sap.ui.core" xm
                             <Image width="100%" src="{productListItems>icon}" />
                             <RatingIndicator enabled="false" value="{path: 'productListItems>productRating'}" />
                                 <Title titleStyle="H2" text="{productListItems>name}"/>
-                            <HBox justifyContent="SpaceRround">
+                            <HBox justifyContent="SpaceAround">
                                 <Label text="current price:" />
                                 <ObjectNumber state="Success" number="{path: 'productListItems>currentPrice',
                                                     formatter: '.formatter.formatPrice'}" />

@@ -31,6 +31,13 @@ sap.ui.define([
                }
         },
 
+        onShopClick: function(oEvent) {
+            this.getOwnerComponent()._oSplitApp.setMode("ShowHideMode")
+            
+            
+            this.getRouter().navTo("SplitApp")
+        },
+
         getRouter: function() {
             return UIComponent.getRouterFor(this)
         }

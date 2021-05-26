@@ -39,13 +39,30 @@
 
   .tileLayout-pink {
    background-position: center center !important;
-    height: 200% !important;
+    height: 190% !important;
   }
 
-  .tileLayout {
-   background-position: top center !important;
+  .circleTile {
+   border-radius: 50% !important;
+   height: 160px !important;
   }
 
-  /* .videoLayout {
-   height: 150% !important;
-  } */
+  .videoLayout {
+   height: 250px !important;
+  }
+
+  .footer__page {
+   height: 300px !important;
+   background-color: #93b7d6 !important;
+  }
+
+  .socialMediaTile {
+     max-height: 30px !important;
+  }
+
+  .timer__text .sapMObjectNumberText{
+     font-size: 60px;
+     overflow: visible;
+     min-height: 3rem;
+     line-height: 0rem;
+  }

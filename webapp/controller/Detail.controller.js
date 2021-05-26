@@ -59,13 +59,13 @@ sap.ui.define([
 			// let oView = this.getView()
 			oEvent.getSource().getBindingContext("productListItems")
 			var oCtx = this.getView().getElementBinding('productListItems').getBoundContext();
-			let path = oEvent.getSource("productName").getBindingContextPath()
+			let path = oEvent.getSource("Category").getBindingContextPath()
 			let getProductArr = path.match(/\/\d/g)
 			let getProductParameter = getProductArr[getProductArr.length - 1].substr(1)
 			
 			this.getRouter().navTo("invoiceInformaton", {
 				invoiceId :  oCtx.getProperty("id"),
-				productName: getProductParameter
+				Category: getProductParameter
 			});
 			
 		
@@ -76,7 +76,7 @@ sap.ui.define([
 
 		var oButton = oEvent.getSource(),
 		oView = this.getView();
-		let getBindingPath = oEvent.getSource("productName").getBindingContext('invoice').sPath
+		let getBindingPath = oEvent.getSource("Category").getBindingContext('invoice').sPath
 		oView.bindElement(getBindingPath)
 
 	// create popover
@@ -111,7 +111,7 @@ sap.ui.define([
 			this.byId('priceCounter').setText(`Price: ${this._bottomValue} RUB - ${this._topValue} RUB`)
 		},
 
-		onSearchProductName(oEvent) {
+		onSearchCategory(oEvent) {
 			this._searchField = oEvent.getSource().getValue()
 			this._onFilteredCart()
 		},

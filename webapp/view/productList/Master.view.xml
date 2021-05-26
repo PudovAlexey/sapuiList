@@ -1,9 +1,7 @@
 <mvc:View controllerName="app.controller.Master" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
     <Page id="masterId" 
     title="{i18n>Categories} {path: 'productListItems>types',
-            formatter: '.formatter.listLength'}" 
-            preserveHeaderStateOnScroll="true" 
-            toggleHeaderOnTitleClick="false">
+            formatter: '.formatter.listLength'}" >
                 <Toolbar>
                     <SearchField width="50%" search=".onSearchElement" />
                     <Button icon="sap-icon://sort" press=".onSort" />
@@ -13,11 +11,11 @@
              width="auto" items="{
         path: 'productListItems>/',
         sorter: {
-            path: 'ProductName'
+            path: 'Category'
         }
         }">
                 <items> 
-                    <StandardListItem icon="{productListItems>icon}" title="{productListItems>ProductName}" iconDensityAware="false" iconInset="false" type="Navigation" press="onListItemPressed" />
+                    <StandardListItem icon="{productListItems>icon}" title="{productListItems>Category}" iconDensityAware="false" iconInset="false" type="Navigation" press="onListItemPressed" />
                 </items>
             </List>
     </Page>

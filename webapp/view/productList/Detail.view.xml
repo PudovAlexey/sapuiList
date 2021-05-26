@@ -4,7 +4,6 @@
                 <Label text="View:"/>
                 <Button press=".onTableView" icon="sap-icon://chart-table-view"/>
                 <Button press=".onListView" icon="sap-icon://increase-line-height"/>
-                <Button text="fucking buulshet" press=".bullshet"/>
             </Toolbar>
         <HBox>
         <l:VerticalLayout growing="true" growingScrollToLoad="true" width="17rem">
@@ -12,7 +11,7 @@
                 <VBox>
                     <Title text="SEARCH" />
                     <HBox>
-                        <SearchField search=".onSearchProductName"  id="SearchField"/>
+                        <SearchField search=".onSearchCategory"  id="SearchField"/>
                     </HBox>
 
                 </VBox>

@@ -81,8 +81,7 @@
                 "categoryName": "Clothes & Accessories",
                 "Discount": "New Arrival",
                 "Link": {
-                    "text": "EXPLORE MORE",
-                    "link": ""
+                    "text": "EXPLORE MORE"
                 }
             },
             {
@@ -90,17 +89,15 @@
                 "categoryName": "Men’s Fashion",
                 "Discount": "store-item Now",
                 "Link": {
-                    "text": "EXPLORE MORE",
-                    "link": ""
+                    "text": "EXPLORE MORE"
                 }
             },
             {
                 "image": "./images/content/women-black.jpg",
-                "categoryName": "Men’s Fashion",
-                "Discount": "store-item Now",
+                "categoryName": "Girl’s Fashion",
+                "Discount": "Hot Collection",
                 "Link": {
-                    "text": "EXPLORE MORE",
-                    "link": ""
+                    "text": "EXPLORE MORE"
                 }
             }
         ]
@@ -411,14 +408,57 @@
         ]
     },
     "TimerBlock": {
+        "bgDecoration": "./images/decorations/special.png",
         "Title": "DEAL OF THE DAY",
         "Subtitle": "STYLE FASHION",
-        "discountEnd": "15.05.2021"
+        "discountEnd": "Sep 30, 2021 15:00:00",
+        "timeToDiscountEnd": ""
     },
-    "BrandsBlock": [],
+    "BrandsBlock": [
+        "./images/brands/1.png",
+        "./images/brands/2.png",
+        "./images/brands/3.png",
+        "./images/brands/4.png",
+        "./images/brands/5.png",
+        "./images/brands/6.png"
+    ],
     "Blog": {
         "Title": "FROM OUR BLOG",
         "Subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodmoe tempor incididunt ut labore et dolore aliqua.",
-        "BlogItems": []
+        "BlogItems": [
+            {
+                "blogId": 1,
+                "blogIcon": "./images/blog/1.jpg",
+                "blogTitle": "Our Apps User Use Mobile On His Mobile",
+                "blogPreview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodoami viverra maycenas acchmsan lacus vel facilisis.",
+                "blogAuthor": "Admin",
+                "postTime": "Sep 30, 2021 15:00:00",
+                "contentType": "Photo",
+                "cardContent": [],
+                "blogContent": []
+            },
+            {
+                "blogId": 1,
+                "blogIcon": "./images/blog/2.jpg",
+                "blogTitle": "Our Apps User Use Mobile On His Mobile",
+                "blogPreview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodoami viverra maycenas acchmsan lacus vel facilisis.",
+                "blogAuthor": "Admin",
+                "postTime": "Sep 30, 2021 15:00:00",
+                "contentType": "Video",
+                "cardContent": [],
+                "blogContent": []
+            },
+            {
+                "blogId": 1,
+                "blogIcon": "./images/blog/3.jpg",
+                "blogTitle": "Our Apps User Use Mobile On His Mobile",
+                "blogPreview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodoami viverra maycenas acchmsan lacus vel facilisis.",
+                "blogAuthor": "Admin",
+                "postTime": "Sep 30, 2021 15:00:00",
+                "contentType": "Carousel",
+                "cardContent": [],
+                "blogContent": []
+            }
+        ]
     }
 }

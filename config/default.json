@@ -1,0 +1,6 @@
+{
+    "port": 3000,
+    "jwtSecret": "vladilen youtube mern",
+    "mongoUri": "mongodb+srv://PudovAlexey:Laborador1478@cluster0.0pgr4.mongodb.net/marchoShop?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:3000"
+  }

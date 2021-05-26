@@ -1,0 +1,95 @@
+<core:FragmentDefinition xmlns:tnt="sap.tnt" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+
+    <Dialog contentWidth="50rem">
+        <customHeader>
+            <Bar>
+
+                <contentLeft>
+                    <Image src="../../images/logo.png" />
+                </contentLeft>
+                <contentMiddle>
+                    <Title titleStyle="H1" text="Ordering" />
+                </contentMiddle>
+                <contentRight>
+                    <Button press=".onDialogClose" icon="sap-icon://decline" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <content>
+            <HBox>
+                <tnt:SideNavigation id="sideNavigation" selectedKey="subItem3">
+                    <tnt:NavigationList items="{shoppingCart>/shoppingCart/}">
+                        <tnt:NavigationListItem icon="{shoppingCart>icon}" text="{shoppingCart>name}">
+                            <tnt:NavigationListItem icon="shoppingCart>icon" text="{shoppingCart>/totalPrice}" />
+
+                        </tnt:NavigationListItem>
+                        <!-- <tnt:NavigationListItem text="Item 2" icon="sap-icon://building">
+                        <tnt:NavigationListItem text="Sub Item 1" />
+                        <tnt:NavigationListItem text="Sub Item 2" />
+                        <tnt:NavigationListItem text="Sub Item 3" />
+                        <tnt:NavigationListItem text="Sub Item 4" />
+                    </tnt:NavigationListItem> -->
+                    </tnt:NavigationList>
+                    <!-- <tnt:fixedItem>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem text="Item 1" icon="sap-icon://employee" />
+                        <tnt:NavigationListItem text="Item 2" icon="sap-icon://building" />
+                        <tnt:NavigationListItem text="Item 3" icon="sap-icon://card" />
+                    </tnt:NavigationList>
+                </tnt:fixedItem> -->
+                </tnt:SideNavigation>
+                <Panel>
+                    <VBox>
+                        <Title text="1. Bonuses and discounts" />
+                        <Text text="
+                        Use a coupon, promo code or Hoff Bonus card to reduce your purchase price." />
+                        <Title text="Marcho Bonus card" />
+                        <Text text="
+                        Add the card number or phone number specified during its registration" />
+                        <Link text="
+                        Benefits of Marcho card" />
+                        <GenericTile justifyItems="Center" class=" sapUiTinyMarginTop">
+                            <TileContent justifyContent="Center">
+                                <VBox>
+                                    <ObjectStatus class="sapUiSmallMarginBottom" text="We return up to 10% of the cost of the goods to the Hoff bonus program member's card" icon="sap-icon://message-information" state="Information" />
+                                    <ObjectStatus class="sapUiSmallMarginBottom" text="Оплачивайте бонусами до 50% от стоимости покупки. 1 бонус = 1 рубль." icon="sap-icon://message-information" state="Information" />
+                                    <ObjectStatus class="sapUiSmallMarginBottom" text="Срок действия бонусов 180 дней с момента начисления." icon="sap-icon://message-information" state="Information" />
+                                </VBox>
+                            </TileContent>
+                        </GenericTile>
+                        <Link text="Participation rules and other information about the Hoff bonus program."/>
+                        <Label />
+                        <Input />
+
+                        <HBox>
+                            <CheckBox />
+                            <VBox>
+                                <Text />
+                                <Link />
+                            </VBox>
+                        </HBox>
+                        <Title />
+                        <Text />
+                        <Input />
+                        <Title />
+                        <MessageStrip text="Leave your contact details or enter the site" type="Error" enableFormattedText="true" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"></MessageStrip>
+
+                        <HBox>
+                            <Input />
+                            <Input />
+                        </HBox>
+                        <HBox>
+                            <VBox>
+                                <Label />
+                                <Input />
+                            </VBox>
+                            <Input />
+                        </HBox>
+                    </VBox>
+                </Panel>
+            </HBox>
+        </content>
+
+    </Dialog>
+</core:FragmentDefinition>

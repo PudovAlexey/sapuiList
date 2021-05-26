@@ -126,7 +126,35 @@
 				},
 
 				{
-					"pattern": "invoice/{invoiceId}/{productName}",
+					"pattern": "invoice/2",
+					"name": "shoes",
+					"target": ["detail","master"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/6",
+					"name": "accessories",
+					"target": ["detail","master"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/4",
+					"name": "outerwear",
+					"target": ["detail","master"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/3",
+					"name": "dress",
+					"target": ["detail","master"],
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "invoice/{invoiceId}/{Category}",
 					"name": "invoiceInformaton",
 					"target": ["detail","invoiceInformaton"],
 					"viewLevel": 2
@@ -143,6 +171,27 @@
 					"pattern": "wishList",
 					"name": "wishList",
 					"target": "wishList",
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "authPage",
+					"name": "authPage",
+					"target": "authPage",
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "blog",
+					"name": "blog",
+					"target": "blog",
+					"viewLevel": 2
+				},
+
+				{
+					"pattern": "contact",
+					"name": "contact",
+					"target": "contact",
 					"viewLevel": 2
 				}
 			],
@@ -187,6 +236,26 @@
 				"wishList": {
 					"viewId": "wishListId",
 					"viewName": "WishList",
+					"viewLevel" : 3,
+					"transition": "slide"
+				},
+
+				"authPage": {
+					"viewId": "authPageId",
+					"viewName": "AuthPage",
+					"viewLevel" : 3,
+					"transition": "slide"
+				},
+				"blog": {
+					"viewId": "blog",
+					"viewName": "BlogPage",
+					"viewLevel" : 3,
+					"transition": "slide"
+				},
+
+				"contact": {
+					"viewId": "contactPageId",
+					"viewName": "ContactPage",
 					"viewLevel" : 3,
 					"transition": "slide"
 				}

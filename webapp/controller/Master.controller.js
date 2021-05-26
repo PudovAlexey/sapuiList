@@ -8,7 +8,7 @@ sap.ui.define([
     return BaseController.extend("app.controller.Master", {
 
         onInit: function() {
-            this._sortField = 'ProductName'
+            this._sortField = 'Category'
             this._oItems = this.byId("items");
             this._bSortDescending = false
             this._sSearchQuery = null
@@ -30,7 +30,7 @@ sap.ui.define([
             let Items = this._oItems
             let searchedValue = oEvent.getSource().getValue()
 
-            if (searchedValue.length > 0) aFilter.push(new Filter("ProductName", FilterOperator.Contains, searchedValue))
+            if (searchedValue.length > 0) aFilter.push(new Filter("Category", FilterOperator.Contains, searchedValue))
 
             let oBinding = Items.getBinding("items");
             oBinding.filter(aFilter, "Application")

@@ -8,8 +8,13 @@
          </Bar>
       </customHeader>
 
-      <core:HTML content='
+      <!-- <core:HTML content='
       &lt;div class=&quot;content&quot;
-      &gt;&lt;div&gt;&lt;/div&gt;&lt;iframe scrolling=&quot;no&quot; width=&quot;1200px&quot;  height=&quot;700px&quot; target=&quot;_blank&quot; src=&quot;https://www.youtube.com/embed?v=TVFhv2yhuZ0&quot;&gt;Learn more about Lorem Ipsum ...&lt;/iframe&gt;&lt;/div&gt;'></core:HTML>
+      &gt;&lt;div&gt;&lt;/div&gt;&lt;video scrolling=&quot;no&quot; width=&quot;1200px&quot;  height=&quot;700px&quot; target=&quot;_blank&quot; src=&quot;https://www.youtube.com/embed?v=TVFhv2yhuZ0&quot;&gt;Learn more about Lorem Ipsum ...&lt;/video&gt;&lt;/div&gt;'></core:HTML> -->
+
+      <l:HorizontalLayout id="preserveContentLayout">
+				<l:content>
+				</l:content>
+			</l:HorizontalLayout>
    </Dialog>
 </core:FragmentDefinition>

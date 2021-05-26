@@ -1,4 +1,41 @@
 {
-    "shoppingCart": [
-    ]
+    "shoppingCart": [],
+    "totalPrice": 0,
+    "totalDiscount": 0,
+    "totalDiscountPercentage": 0,
+    "itemsInCart": 0,
+    "AdditionalServices": {
+        "delivery": {
+            "to": {
+                "country": "",
+                "city": "",
+                "street": "",
+                "houseNum": "",
+                "flat": "",
+                "intercom": ""
+            },
+            "distanceFromCity": "",
+            "deliveryPrice": 300,
+            "deliveryPriceFromCity": {
+                "price": 50,
+                "measure": "KM"
+            }
+        },
+        "tailoring": {
+            "clothing": "",
+            "clothingSize": "",
+            "clothingPart": "",
+            "params": {
+                "tailoringLength": "",
+                "difficult": [
+                    "easy",
+                    "medium",
+                    "hard"
+                ],
+                "price": ""
+            }
+        },
+        "totalAdditional": 0,
+        "totalAdditionalPrice": 0
+    }
 }

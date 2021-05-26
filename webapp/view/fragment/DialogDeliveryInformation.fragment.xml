@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Popover width="10px" id="myPopover" title="{Name}" class="sapUiResponsivePadding--header sapUiResponsivePadding--footer" placement="Top" initialFocus="email">
+      <content>
+         <Text class="sapUiSmallMargin sapUiMediumMarginBottom" text="Products of your chosen category, ordered in the online store in the amount of 4999 RUB, are delivered free of charge" />
+         <Text class="sapUiSmallMargin" text="More information about the conditions of the promotion can be found here. The promotion is implemented by providing a discount on the delivery service." />
+
+      </content>
+   </Popover>
+</core:FragmentDefinition>

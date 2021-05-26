@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" controllerName="app.controller.ShoppongCart" xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc'>
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:c="sap.f" xmlns:f="sap.ui.layout.form" xmlns:card="sap.f.cards" controllerName="app.controller.ShoppongCart" xmlns='sap.m' xmlns:mvc='sap.ui.core.mvc'>
     <Page>
 
         <customHeader>
@@ -9,81 +9,135 @@
             </Bar>
         </customHeader>
 
-            <Table id="idProductsTable"
-            inset="false"
-            items="{shoppingCart>/shoppingCart/}">
-            <headerToolbar>
-                <OverflowToolbar>
-                    <content>
-                        <Title text="Product Cart" level="H2"/>
-                    </content>
-                </OverflowToolbar>
-            </headerToolbar>
-            <infoToolbar>
-                <OverflowToolbar>
-                    <Label textAlign="Center" text="Product Cart"/>
-                </OverflowToolbar>
-            </infoToolbar>
-            <columns>
-                <Column
-                    width="12em">
-                    <Text text="Avatar" />
-                </Column>
-                <Column
-                    minScreenWidth="Tablet"
-                    demandPopin="true">
-                    <Text text="Item Name" />
-                </Column>
-                <Column
-                    minScreenWidth="Desktop"
-                    demandPopin="true"
-                    hAlign="End">
-                    <Text text="Choosed parameters" />
-                </Column>
-                <Column
-                    minScreenWidth="Desktop"
-                    demandPopin="true"
-                    hAlign="Center">
-                    <Text text="Choosed Value" />
-                </Column>
-                <Column
-                    hAlign="End">
-                    <Text text="Price" />
-                </Column>
-            </columns>
-            <items>
-                <ColumnListItem>
-                    <cells>
-                        <Avatar src="{shoppingCart>icon}"/>
-                        <ObjectIdentifier
-                            title=" X{shoppingCart>name}"
-                            text="{ProductId}"/>
-                        <Text
-                            text="Size: {shoppingCart>choosedSize} X Color: {shoppingCart>choosedColor}" />
-                        <Text
-                            text="{shoppingCart>choosedItems} pc." />
-                        <ObjectNumber
-                            number="{path: 'shoppingCart>currentPrice',
-                            formatter: '.formatter.formatPrice'}"
-                            unit="{shoppingCart>currentPrice}"/>
-                        <ObjectNumber
-                                number="{
-                                    parts:[{path:'Price'},{path:'CurrencyCode'}],
-                                    type: 'sap.ui.model.type.Currency',
-                                    formatOptions: {showMeasure: false}
-                                }"
-                                unit="{CurrencyCode}" />
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
-        <Toolbar>
-            <Button text="Share your cart" icon="sap-icon://email"/>
-            <Button text="order delivery" icon="sap-icon://supplier"/>
-            <ToolbarSpacer/>
-            <Button text="to pay" icon="sap-icon://batch-payments"/>
-            <Button press=".onClearCart" text="clear cart" icon="sap-icon://cart-2"/>
-        </Toolbar>
+        <FlexBox>
+
+            <VBox width="70%">
+
+                <Table autoPopinMode="true" delete=".onItemPressed" id="idProductsTable" selectionChange="handleSelectionChange" inset="false" items="{shoppingCart>/shoppingCart/}">
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <content>
+                                <Title text="Product Cart" level="H2" />
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <infoToolbar>
+                        <OverflowToolbar>
+                            <Label textAlign="Center" text="Product Cart" />
+                        </OverflowToolbar>
+                    </infoToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Avatar" />
+                        </Column>
+                        <Column width="15rem" demandPopin="true">
+                            <Text text="Item parameters" />
+                        </Column>
+                        <Column width="12rem" hAlign="Center" demandPopin="true">
+                            <Text text="Price/discount" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="change quantity" />
+                        </Column>
+                        <Column  hAlign="End">
+                            <Text text="Totlal price" />
+                        </Column>
+                        <Column hAlign="End">
+                            <Text text="Close" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="onItemClicked" type="Active">
+                            <cells>
+                                <Avatar src="{shoppingCart>icon}" />
+                                <VBox>
+                                    <ObjectIdentifier title=" {shoppingCart>name}" text="Article: #{shoppingCart>goodArticle}" />
+                                    <Text class="sapUiSmallMarginBottom" id="choosedParams" text="Size: {shoppingCart>choosedSize}/Color: {shoppingCart>choosedColor}  X {shoppingCart>choosedItems} pc." />
+                                </VBox>
+                                <VBox>
+                                    <HBox class="sapUiTinyMarginBottom">
+                                        <ObjectNumber class="sapUiTinyMarginEnd" number="{path: 'shoppingCart>currentPrice',
+                                            formatter: '.formatter.formatPrice'}" />
+
+                                        <ObjectNumber state="Error" number="{shoppingCart>discountPercentage} %" />
+                                    </HBox>
+
+                                    <ObjectNumber number="{path: 'shoppingCart>priceBeforeDiscount',
+                                            formatter: '.formatter.formatPrice'}" />
+                                </VBox>
+                                <StepInput change=".onValueChanged" id="counter" value="{shoppingCart>choosedItems}" min="0" max="{shoppingCart>volumeInStock}" />
+                                <ObjectNumber class="sapUiSmallMarginEnd" number="{path: 'shoppingCart>TotalAmount',
+                                    formatter: '.formatter.formatPrice'}" />
+                                <Button press=".onItemPressed" type="Ghost" icon="sap-icon://decline" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <Toolbar>
+                    <ToolbarSpacer />
+                    <Button width="10rem" press=".onClearCart" text="clear cart" icon="sap-icon://cart-2" />
+                    <Button id="showDeliverySettings" class="sapUiSmallMarginEnd" press=".handlePopoverPressDelivery" text="order delivery" icon="sap-icon://supplier" />
+                </Toolbar>
+
+            </VBox>
+            <VBox>
+
+            <c:Card class="sapUiMediumMargin" width="15rem">
+                <c:header>
+                    <card:Header title="Order information" />
+                </c:header>
+                <c:content>
+
+                    <f:SimpleForm id="SimpleFormDisplay480_Trial"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="1"
+                    labelSpanL="1"
+                    labelSpanM="1"
+                    labelSpanS="8"
+                    adjustLabelSpan="false"
+                    emptySpanXL="1"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false" >
+                        <f:content>
+
+                            <Label class="sapUiSmallMarginBottom" text="total to purchase" />
+                            <ObjectNumber state="Information" number="{shoppingCart>/itemsInCart}" />
+
+                            <Label class="sapUiSmallMarginBottom" text="Total price" />
+                            <ObjectNumber state="Information" number="{shoppingCart>/totalPrice}" />
+
+                            <Label class="sapUiSmallMarginBottom" text="Total discount" />
+                            <ObjectNumber state="Information" number="{shoppingCart>/totalDiscount}" />
+
+                            <Label class="sapUiSmallMarginBottom" text="Discount percentage" />
+
+                            <ObjectNumber state="Information" number="{shoppingCart>/totalDiscountPercentage}" />
+
+                            <Label class="sapUiSmallMarginBottom" text="additional services" />
+
+                            <Label class="sapUiSmallMarginBottom" text="Total payable" />
+                        </f:content>
+                    </f:SimpleForm>
+                </c:content>
+            </c:Card>
+
+            <VBox alignItems="Center">
+                <!-- <ToolbarSpacer /> -->
+                <HBox>
+                    <Text class="sapUiTinyMarginEnd" text="Get free Delivery" />
+                    <Button id="ShowDeliveryInformation" icon="sap-icon://sys-help" type="Transparent" press="onFreeDeliveryPress" ariaLabelledBy="actionButtonLabel" />
+                </HBox>
+                <Button type="Accept" width="12rem" press=".handleDialogPressPay" text="proceed to payment" icon="sap-icon://batch-payments" />
+                <Link text="Share your cart" icon="sap-icon://email" />
+            </VBox>
+        </VBox>
+        </FlexBox>
 
     </Page>
 </mvc:View>

@@ -1,17 +1,18 @@
 {
   "Invoices": [
     {
-      "ProductName": "Hats",
+      "Category": "Hats",
       "types": 10,
       "id": 1,
       "icon": "https://img2.freepng.ru/20180425/uie/kisspng-sport-baseball-cap-gift-souvenir-5ae0ad81571a26.0934078615246739213568.jpg",
       "product": [
         {
-          "name": "nike",
-          "goodArticle": 15739,
+          "name": "Nike",
+          "goodArticle": 111001,
           "icon": "https://f49f7a99576626a7a4f9-6ad05d6fae9750295d152a24570d770f.ssl.cf5.rackcdn.com/detailsbig/333114_Black_FlatFront_2009.jpg",
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -25,6 +26,7 @@
           ],
           "currentPrice": 1500,
           "priceBeforeDiscount": 150,
+          "discountPercentage": 0,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis. dolor sit amet, consectur picing elit, sed do eusmod tempor incididunt ut mor more labore a doore magna aliqua. Quis into ipsum the suspendisse ultrices grda. Lorem in ipsum dolor sit amet, consectetur adipiscings elit, sed does eiusmod tempor incididunt mod labore et dolore magna aliqua. Quis ipsum in suspendisse fass a ultrices gravida. Loremon ipsum dolor st amaiet, consectetur aipiscinge elit, sed do eiusobimod tempor incididunt uts labore et doloroe gravida.",
           "curreny": "RUB",
           "reviews": [
@@ -68,9 +70,10 @@
         },
         {
           "name": "puma",
-          "goodArticle": 2479318,
+          "goodArticle": 111002,
           "volumeInStock": 140,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -128,9 +131,10 @@
         },
         {
           "name": "adidas",
-          "goodArticle": 789201,
+          "goodArticle": 111003,
           "volumeInStock": 73,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -188,9 +192,10 @@
         },
         {
           "name": "reebok",
-          "goodArticle": 7921468,
+          "goodArticle": 111004,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
            "img": [
             "https://www.proball.ru/upload/images/35664735/10d261fc0a6ec8f1b639abd2306866e1_1000_1000.jpg",
             "https://virginmg.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/1/4/142-43-8_7.jpg",
@@ -243,17 +248,18 @@
       ]
     },
     {
-      "ProductName": "Shoes",
+      "Category": "Shoes",
       "types": 4,
       "id": 2,
       "icon": "https://im0-tub-ru.yandex.net/i?id=428b0f95b8a14c7e6673399e0c573fb4&n=13",
       "product": [
         {
           "name": "sneakers",
-          "goodArticle": 79211366,
+          "goodArticle": 112001,
           "icon": "https://ae01.alicdn.com/kf/HTB1LD84RVXXXXXzXXXXq6xXFXXXh/-.jpg",
           "volumeInStock": 15,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -310,9 +316,10 @@
         },
         {
           "name": "classic shoes",
-          "goodArticle": 7921479336,
+          "goodArticle": 112002,
           "volumeInStock": 25040,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -370,9 +377,10 @@
         },
         {
           "name": "sandals",
-          "goodArticle": 14478925,
+          "goodArticle": 112003,
           "volumeInStock": 25000,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -430,9 +438,10 @@
         },
         {
           "name": "moccasins",
-          "goodArticle": 478923,
+          "goodArticle": 112004,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -491,16 +500,17 @@
       ]
     },
     {
-      "ProductName": "Dresses",
+      "Category": "Dresses",
       "types": 4,
       "id": 3,
       "icon": "https://banner2.cleanpng.com/20180512/ugw/kisspng-little-black-dress-shoulder-sleeve-5af66a91eee351.6260993515260985779785.jpg",
       "product": [
         {
           "name": "sport dress",
-          "goodArticle": 4798214,
+          "goodArticle": 113001,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -558,9 +568,10 @@
         },
         {
           "name": "classic dress",
-          "goodArticle": 4792146,
+          "goodArticle": 113002,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -618,9 +629,10 @@
         },
         {
           "name": "retro dress",
-          "goodArticle": 444798,
+          "goodArticle": 113003,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -678,9 +690,10 @@
         },
         {
           "name": "modern dress",
-          "goodArticle": 888472,
+          "goodArticle": 113004,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -739,16 +752,17 @@
       ]
     },
     {
-      "ProductName": "outerwear",
+      "Category": "Outerwear",
       "types": 4,
       "id": 4,
       "icon": "https://banner2.cleanpng.com/20190122/wsk/kisspng-sweatshirt-t-shirt-winter-clothing-hood-hoodie-svg-png-icon-free-download-62939-onlin-5c4788c8d64221.3634906415481919448776.jpg",
       "product": [
         {
           "name": "swetter",
-          "goodArticle": 493258,
+          "goodArticle": 114001,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -806,9 +820,10 @@
         },
         {
           "name": "turtleneck",
-          "goodArticle": 987216,
+          "goodArticle": 114002,
           "volumeInStock": 750,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -866,9 +881,10 @@
         },
         {
           "name": "undershirt",
-          "goodArticle": 9324789,
+          "goodArticle": 114003,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -926,10 +942,11 @@
         },
         {
           "name": "T-shirt",
-          "goodArticle": 9216787,
+          "goodArticle": 114004,
           "icon": "https://www.amtees.ru/wa-data/public/shop/products/52/20/2052/images/984/984.970.jpg",
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -987,16 +1004,17 @@
       ]
     },
     {
-      "ProductName": "pants",
+      "Category": "pants",
       "types": 4,
       "id": 5,
       "icon": "https://banner2.cleanpng.com/20180713/gwh/kisspng-chicago-pants-jeans-sales-tax-5b48f1f5e6ad36.1298199815315071899449.jpg",
       "product": [
         {
           "name": "jeans",
-          "goodArticle": 98135478,
+          "goodArticle": 115001,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1054,9 +1072,10 @@
         },
         {
           "name": "skirt",
-          "goodArticle": 4689214624,
+          "goodArticle": 115002,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1114,9 +1133,10 @@
         },
         {
           "name": "classic pants",
-          "goodArticle": 7921468,
+          "goodArticle": 115003,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1174,9 +1194,10 @@
         },
         {
           "name": "modern pents",
-          "goodArticle": 792166987,
+          "goodArticle": 115004,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1235,16 +1256,17 @@
       ]
     },
     {
-      "ProductName": "accessories",
+      "Category": "accessories",
       "types": 4,
       "id": 6,
       "icon": "https://img.flaticon.com/icons/png/512/750/750728.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF",
       "product": [
         {
           "name": "glasses",
-          "goodArticle": 49871365,
+          "goodArticle": 116001,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1302,9 +1324,10 @@
         },
         {
           "name": "bracelet",
-          "goodArticle": 7924469,
+          "goodArticle": 116002,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1362,9 +1385,10 @@
         },
         {
           "name": "backpack",
-          "goodArticle": 498716,
+          "goodArticle": 116003,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1422,9 +1446,10 @@
         },
         {
           "name": "mask",
-          "goodArticle": 9942164,
+          "goodArticle": 116004,
           "volumeInStock": 20,
           "choosedItems": 0,
+          "TotalAmount": 0,
           "productRating": 4,
           "availableSizes": ["XS", "S", "M", "L", "XL"],
           "choosedSize": "",
@@ -1439,6 +1464,7 @@
           "icon": "https://d.newsweek.com/en/full/1579612/coronavirus-covid19-mask-mexico-getty.jpg",
           "currentPrice": 150,
           "priceBeforeDiscount": 250,
+          "discountPercentage": 0,
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qus ipsum speissei ultrices gravida. Risus commodo viverra maeenas accumsan lacus vel facilisis.",
           "curreny": "RUB",
           "valueToBuy": "0",

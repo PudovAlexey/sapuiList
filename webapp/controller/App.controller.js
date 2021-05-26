@@ -7,7 +7,7 @@ sap.ui.define([
         onInit: function() {
             this.getOwnerComponent()._oSplitApp = this.byId("app");
                 this._onHideMaster()
-            //  this.getView().byId("app").setMode("HideMode")
+                
             let bagdeWishList = this.byId("bagdeWishList")
             let bagdeCart = this.byId("bagdeCart")
             let shoppingCartKeys =  Object.keys(localStorage).filter(el => el.lastIndexOf("shoppingCart") > -1 ? el : null).length
@@ -22,16 +22,23 @@ sap.ui.define([
             bagdeCart.setValue(shoppingCartKeys)
         },
 
-        onShopClick: function(oEvent) {
-            this.getView().byId("app").setMode("ShowHideMode") 
-            var oSplitApp=this.getOwnerComponent()._oSplitApp;
-            
-            
-            this.getRouter().navTo("SplitApp")
-        },
-
         onHomeClick: function() {
             this.getRouter().navTo("HomePage")
+            this._onHideMaster()
+        },
+
+        onAuthPageClick: function() {
+            this.getRouter().navTo("authPage")
+            this._onHideMaster()
+        },
+
+        onBlogClick: function() {
+            this.getRouter().navTo("blog")
+            this._onHideMaster()
+        },
+
+        onContactClick: function() {
+            this.getRouter().navTo("contact")
             this._onHideMaster()
         },
 

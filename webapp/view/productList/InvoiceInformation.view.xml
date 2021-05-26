@@ -21,7 +21,7 @@
 							</HBox>
 						</VBox>
 						<RatingIndicator enabled="false" value="{path: 'productListItems>productRating'}" />
-						<ObjectNumber number="{path: 'productListItems>reviews',
+						<ObjectNumber number="{path: 'reviewsModel>/',
 													formatter: '.formatter.getRating'}" />
 					</Toolbar>
 					<Label text="Review:" />
@@ -92,19 +92,19 @@
 					</IconTabFilter>
 
 					<IconTabFilter text="Reviews">
-						<List id="reviews" class="sapUiResponsiveMargin" width="auto" items="{productListItems>reviews}">
+						<List id="reviews" class="sapUiResponsiveMargin" width="auto" items="{reviewsModel>/}">
 							<items>
-								<CustomListItem visible="{= ${productListItems>rating}.splice(1, 1)}" id="reviewsItem">
+								<CustomListItem visible="{= ${reviewsModel>rating}.splice(1, 1)}" id="reviewsItem">
 									<content>
 										<HBox alignItems="Center" class="sapUiTinyMarginBottom">
 											<Avatar />
-											<Title text="{productListItems>FirstName}" class="sapUiSmallMarginBegin" />
+											<Title text="{reviewsModel>FirstName}" class="sapUiSmallMarginBegin" />
 										</HBox>
 										<Toolbar>
-											<Text text="{productListItems>message}" />
-											<Link src="{productListItems>mail}" />
+											<Text text="{reviewsModel>message}" />
+											<Link src="{reviewsModel>mail}" />
 											<ToolbarSpacer />
-											<RatingIndicator enabled="false" value="{productListItems>rating}" />
+											<RatingIndicator enabled="false" value="{reviewsModel>rating}" />
 										</Toolbar>
 									</content>
 								</CustomListItem>
